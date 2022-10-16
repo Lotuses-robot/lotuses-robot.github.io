@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+  
+  <title>CF412A | Lotuses&#39;s Blog</title>
+  <meta name="author" content="Lotuses" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#x7684;&amp;#x601D;&amp;#x8DEF;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5411;&amp;#x5DE6;&amp;#x518D;&amp;#x5411;&amp;#x53F3;&amp;#x3002; &amp;#x7ED8;&amp;#x5B57;&amp;#x7B26;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x662F;&amp;#x56FA;&amp;#x5B9A;&amp;#x768">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF412A">
+<meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf412a/index.html">
+<meta property="og:site_name" content="Lotuses&#39;s Blog">
+<meta property="og:description" content="&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#x7684;&amp;#x601D;&amp;#x8DEF;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5411;&amp;#x5DE6;&amp;#x518D;&amp;#x5411;&amp;#x53F3;&amp;#x3002; &amp;#x7ED8;&amp;#x5B57;&amp;#x7B26;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x662F;&amp;#x56FA;&amp;#x5B9A;&amp;#x768">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+<meta property="article:published_time" content="2022-07-29T07:56:06.000Z">
+<meta property="article:modified_time" content="2022-07-29T07:56:07.021Z">
+<meta property="article:author" content="Lotuses">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/05j8cwf8.png');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/no-background.png');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                档案馆
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Lotuses&#39;s Blog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Lotuses&#39;s Blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2022/07/29/solution-cf412a/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">CF412A</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2022-07-29T07:56:06.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-29</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Lotuses</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~2.83K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1659081367021"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><p>&#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x662F;&#x5411;&#x5DE6;&#x518D;&#x5411;&#x53F3;&#x3002;</p>
+<p>&#x7ED8;&#x5B57;&#x7B26;&#x7684;&#x65F6;&#x95F4;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x60F3;&#x8981;&#x51CF;&#x5C11;&#x53EA;&#x80FD;<strong>&#x51CF;&#x5C11;&#x4E2D;&#x95F4;&#x7684;&#x642C;&#x68AF;&#x5B50;&#x6D6A;&#x8D39;&#x7684;&#x65F6;&#x95F4;</strong>&#x3002;</p>
+<p>&#x5411;&#x5DE6;&#xFF0C;&#x4E3A;&#x4E86;&#x4E00;&#x6B21;&#x6027;&#x89E3;&#x51B3;&#x5DE6;&#x8FB9;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x4E00;&#x76F4;&#x5411;&#x5DE6;&#xFF0C;&#x90A3;&#x4E48;&#x4E2D;&#x9014;&#x5FC5;&#x5B9A;&#x5411;&#x53F3;&#xFF0C;&#x800C;&#x5DE6;&#x8FB9;&#x8FD8;&#x6709;&#x672A;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x8BF4;&#x660E;&#x8FD8;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#xFF0C;<strong>&#x8FD9;&#x65F6;&#x5C31;&#x6D6A;&#x8D39;&#x4E86;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;</strong>&#xFF1B;&#x5411;&#x53F3;&#x540C;&#x7406;&#x3002;<strong>&#x6240;&#x4EE5;&#xFF0C;&#x5904;&#x7406;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x8981;&#x4E48;&#x4E0D;&#x5904;&#x7406;&#xFF0C;&#x8981;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x5B8C;&#x3002;</strong></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5148;&#x5411;&#x5DE6;&#x8FD8;&#x662F;&#x5148;&#x5411;&#x53F3;&#x5462;&#xFF1F;</p>
+<p>&#x89C2;&#x5BDF;&#x53D1;&#x73B0;&#xFF0C;&#x5148;&#x5411;&#x5DE6;&#xFF0C;&#x90A3;&#x4E48;&#x4E2D;&#x9014;&#x6D6A;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x5C31;&#x662F;&#x5DE6;&#x8FB9;&#x8282;&#x70B9;&#x6570;&#x7684;&#x4E24;&#x500D;&#xFF1B;&#x5148;&#x5411;&#x53F3;&#x662F;&#x53F3;&#x8FB9;&#x8282;&#x70B9;&#x6570;&#x7684;&#x4E24;&#x500D;&#x3002;<strong>&#x81EA;&#x7136;&#x662F;&#x4F18;&#x5148;&#x9009;&#x62E9;&#x8282;&#x70B9;&#x6570;&#x5C11;&#x7684;&#x4E86;&#xFF01;</strong></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5206;&#x7C7B;&#x8BA8;&#x8BBA;&#xFF0C;&#x5E76;&#x6574;&#x7406;&#x6A21;&#x62DF;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x6253;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>((n-k)&gt;=k)  <span class="comment">// &#x5206;&#x7C7B;&#x8BA8;&#x8BBA;</span></span><br><span class="line">    {             <span class="comment">// &#x6A21;&#x62DF;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=k<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k+<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.lotuses.net/2022/07/29/solution-cf412a/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf412a/";
+            const title         = "「CF412A」";
+            const excerpt       = `&#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x662F;&#x5411;&#x5DE6;&#x518D;&#x5411;&#x53F3;&#x30...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-07-29T07:56:07.021Z" itemprop="dateModified">最后编辑：2022-07-29</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Easy 的题 题解" href="/2022/07/29/easy-problem-solution/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" CF347A Difference Row" href="/2022/07/29/solution-cf347a/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2022/07/29/solution-cf412a/',
+                path: '/2022/07/29/solution-cf412a/'
+            }, JSON.parse('{"clientID":"7a41543bab203de00687","clientSecret":"8dcbcc9cbd8d09fedb7023e655899940e13ef17d","repo":"BlogTalk","owner":"Lotuses-robot","admin":["Candinya","Lotuses-robot"],"distractionFreeMode":true,"proxy":"https://vercel.prohibitorum.top/github_access_token"}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://cdn.luogu.com.cn/upload/usericon/414231.png" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">Deserted World.</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                46
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                0
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                1
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 0.6em;">总结</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/16/2022-10-16-%E6%80%BB%E7%BB%93/"><i class="fa  fa-book"></i> 2022-10-16 总结</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/15/number-theory-and-mobius-studies/"><i class="fa  fa-book"></i> 数论及莫比乌斯反演学习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/07/29/qian-tan-J-C-ji-qiao-cong-ru-men-dao-jing-tong/"><i class="fa  fa-book"></i> 浅谈机（J）惨（C）技巧——从入门到精通(?)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/07/29/solution-p1687/"><i class="fa  fa-book"></i> P1687 机器人小Q 题解</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/07/29/solution-p1172/"><i class="fa  fa-book"></i> P1172 安全逃离 题解</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 Lotuses's Blog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Lotuses.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
