@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316; &amp;#x516D;&amp;#x4E2A;&amp;#x5B57;&amp;#x6BCD;&amp;#xFF0C;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x5B57;&amp;#x6BCD;&amp;#x5927;&amp;#x5199;&amp;#x82E5;&amp;#x51FA;&amp;#x73B0;&amp;#x5728;&amp;#x5C0F;&amp;#x5199;&amp;#x7684;&amp;#x524D;&amp;#x976">
+  <meta name="description" content="&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316;&amp;#x516D;&amp;#x4E2A;&amp;#x5B57;&amp;#x6BCD;&amp;#xFF0C;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x5B57;&amp;#x6BCD;&amp;#x5927;&amp;#x5199;&amp;#x82E5;&amp;#x51FA;&amp;#x73B0;&amp;#x5728;&amp;#x5C0F;&amp;#x5199;&amp;#x7684;&amp;#x524D;&amp;#x9762;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1644A Doors and Keys 题解">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf1644a/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316; &amp;#x516D;&amp;#x4E2A;&amp;#x5B57;&amp;#x6BCD;&amp;#xFF0C;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x5B57;&amp;#x6BCD;&amp;#x5927;&amp;#x5199;&amp;#x82E5;&amp;#x51FA;&amp;#x73B0;&amp;#x5728;&amp;#x5C0F;&amp;#x5199;&amp;#x7684;&amp;#x524D;&amp;#x976">
+<meta property="og:description" content="&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316;&amp;#x516D;&amp;#x4E2A;&amp;#x5B57;&amp;#x6BCD;&amp;#xFF0C;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x5B57;&amp;#x6BCD;&amp;#x5927;&amp;#x5199;&amp;#x82E5;&amp;#x51FA;&amp;#x73B0;&amp;#x5728;&amp;#x5C0F;&amp;#x5199;&amp;#x7684;&amp;#x524D;&amp;#x9762;">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:55:36.000Z">
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        954
+                        944
                     
                     字
                 </li>
@@ -199,18 +199,13 @@
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">题意简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">题意简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h3 id="&#x9898;&#x610F;&#x7B80;&#x5316;">&#x9898;&#x610F;&#x7B80;&#x5316;</h3>
-<p>&#x516D;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x82E5;&#x51FA;&#x73B0;&#x5728;&#x5C0F;&#x5199;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x8F93;&#x51FA;
-<code>NO</code>&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA; <code>YES</code>&#x3002;</p>
-<h3 id="solution">Solution</h3>
-<p>&#x5B57;&#x5178;&#x66B4;&#x529B;&#x6A21;&#x62DF;&#xFF0C;&#x8FD9;&#x6837;&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x91CF;&#x3002;&#x4F7F;&#x7528; <code>toupper()</code>
-<del>&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x6574;&#x6D01;&#x3002;</del></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">bool</span> flag[<span class="number">130</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">memset</span>(flag,<span class="number">0</span>,<span class="built_in">sizeof</span>(flag));</span><br><span class="line">		string str;</span><br><span class="line">		<span class="type">int</span> t=<span class="number">0</span>;</span><br><span class="line">		cin&gt;&gt;str;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;str.<span class="built_in">length</span>();i++)</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">isupper</span>(str[i]))</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">if</span>(!flag[str[i]]) {cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;t=<span class="number">1</span>;<span class="keyword">break</span>;}</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">else</span> flag[<span class="built_in">toupper</span>(str[i])]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(t==<span class="number">0</span>) cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-</div>
+            <div itemprop="articleBody"><h3 id="&#x9898;&#x610F;&#x7B80;&#x5316;"><a href="#&#x9898;&#x610F;&#x7B80;&#x5316;" class="headerlink" title="&#x9898;&#x610F;&#x7B80;&#x5316;"></a>&#x9898;&#x610F;&#x7B80;&#x5316;</h3><p>&#x516D;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x82E5;&#x51FA;&#x73B0;&#x5728;&#x5C0F;&#x5199;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x8F93;&#x51FA; <code>NO</code>&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA; <code>YES</code>&#x3002;</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>&#x5B57;&#x5178;&#x66B4;&#x529B;&#x6A21;&#x62DF;&#xFF0C;&#x8FD9;&#x6837;&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x91CF;&#x3002;&#x4F7F;&#x7528; <code>toupper()</code> <del>&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x6574;&#x6D01;&#x3002;</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">bool</span> flag[<span class="number">130</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">memset</span>(flag,<span class="number">0</span>,<span class="built_in">sizeof</span>(flag));</span><br><span class="line">		string str;</span><br><span class="line">		<span class="type">int</span> t=<span class="number">0</span>;</span><br><span class="line">		cin&gt;&gt;str;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;str.<span class="built_in">length</span>();i++)</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">isupper</span>(str[i]))</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">if</span>(!flag[str[i]]) {cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;t=<span class="number">1</span>;<span class="keyword">break</span>;}</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">else</span> flag[<span class="built_in">toupper</span>(str[i])]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(t==<span class="number">0</span>) cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -277,8 +272,7 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf1644a/";
             const title         = "「CF1644A Doors and Keys 题解」";
-            const excerpt       = `&#x9898;&#x610F;&#x7B80;&#x5316;
-&#x516D;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x5B57;&#x6BCD;&#x...`;
+            const excerpt       = `&#x9898;&#x610F;&#x7B80;&#x5316;&#x516D;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x5B57;&#x6BCD;&#x59...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -406,7 +400,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-text">题意简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-text">题意简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
     </div>
 </aside>
                 
