@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="https://cdn.luogu.com.cn/upload/usericon/414231.png">
   
-  <title>CF1646C Solution | Lotuses&#39;s Blog</title>
+  <title>Codeforces Round 774 | Lotuses&#39;s Blog</title>
   <meta name="author" content="Lotuses" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -16,16 +16,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="Solution&amp;#x9996;&amp;#x5148;&amp;#xFF0C;$-1$ &amp;#x662F;&amp;#x4E0D;&amp;#x53EF;&amp;#x80FD;&amp;#x7684;&amp;#x3002;&amp;#x56E0;&amp;#x4E3A;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x4E2A;&amp;#x975E;&amp;#x8D1F;&amp;#x6574;&amp;#x6570;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x8F6C;&amp;#x">
+  <meta name="description" content="A. Square Counting&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E8F;&amp;#x5217; $a_1,\cdots,a_{n+1}$&amp;#xFF0C;&amp;#x6BCF;&amp;#x4E00;&amp;#x4E2A;&amp;#x5143;&amp;#x7D20;&amp;#x6EE1;&amp;#x8DB3;&amp;#x4E24;&amp;#x4E2A;&amp;#x6761;&amp;#x4EF6;&amp;#xFF1A;  $0\le a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF1646C Solution">
-<meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf1646c/index.html">
+<meta property="og:title" content="Codeforces Round 774">
+<meta property="og:url" content="https://www.lotuses.net/2022/07/29/774-solution/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="Solution&amp;#x9996;&amp;#x5148;&amp;#xFF0C;$-1$ &amp;#x662F;&amp;#x4E0D;&amp;#x53EF;&amp;#x80FD;&amp;#x7684;&amp;#x3002;&amp;#x56E0;&amp;#x4E3A;&amp;#x4EFB;&amp;#x610F;&amp;#x4E00;&amp;#x4E2A;&amp;#x975E;&amp;#x8D1F;&amp;#x6574;&amp;#x6570;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x8F6C;&amp;#x">
+<meta property="og:description" content="A. Square Counting&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E8F;&amp;#x5217; $a_1,\cdots,a_{n+1}$&amp;#xFF0C;&amp;#x6BCF;&amp;#x4E00;&amp;#x4E2A;&amp;#x5143;&amp;#x7D20;&amp;#x6EE1;&amp;#x8DB3;&amp;#x4E24;&amp;#x4E2A;&amp;#x6761;&amp;#x4EF6;&amp;#xFF1A;  $0\le a">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
-<meta property="article:published_time" content="2022-07-29T07:53:59.000Z">
-<meta property="article:modified_time" content="2022-07-29T07:53:59.372Z">
+<meta property="article:published_time" content="2022-07-29T07:55:14.000Z">
+<meta property="article:modified_time" content="2022-10-16T11:44:04.343Z">
 <meta property="article:author" content="Lotuses">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
@@ -166,15 +166,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2022/07/29/solution-cf1646c/">
+    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2022/07/29/774-solution/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">CF1646C Solution</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Codeforces Round 774</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2022-07-29T07:53:59.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-29</time></li>
+                <li><time datetime="2022-07-29T07:55:14.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-29</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">Lotuses</span>
                 </li>
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.54K
+                        ~6.84K
                     
                     字
                 </li>
@@ -193,23 +193,50 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1659081239372"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1665920644343"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.</span> <span class="toc-text">Solution</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Square-Counting"><span class="toc-number">1.</span> <span class="toc-text">A. Square Counting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Quality-vs-Quantity"><span class="toc-number">2.</span> <span class="toc-text">B. Quality vs Quantity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-Factorials-and-Powers-of-Two"><span class="toc-number">3.</span> <span class="toc-text">C. Factorials and Powers of Two</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>&#x9996;&#x5148;&#xFF0C;$-1$ &#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x3002;&#x800C;&#x5BF9;&#x5E94;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x4E0A;&#x7684; $1$&#xFF0C;&#x5355;&#x72EC;&#x62FF;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x90FD;&#x662F;&#x5F3A;&#x6570;&#x3002;</p>
+            <div itemprop="articleBody"><h3 id="A-Square-Counting"><a href="#A-Square-Counting" class="headerlink" title="A. Square Counting"></a>A. Square Counting</h3><p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x5E8F;&#x5217; $a_1,\cdots,a_{n+1}$&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6EE1;&#x8DB3;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ol>
+<li>$0\le a_i&lt;n$</li>
+<li>$a_i=n^2$</li>
+</ol>
+<p>&#x5DF2;&#x77E5; $n$ &#x548C;&#x5E8F;&#x5217;&#x4E4B;&#x548C; $s$&#xFF0C;&#x6C42;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F; $1\le i\le n+1$&#xFF0C;$a_i=n^2$ &#x7684;&#x4E2A;&#x6570;&#x3002;</p>
+<p>$t$ &#x7EC4;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x8BC1;&#x660E;&#x7ED3;&#x679C;&#x552F;&#x4E00;&#x3002;</p>
+<p>&#x7ED3;&#x8BBA;&#xFF1A; $ans=\lfloor s/n^2\rfloor$</p>
+<p>&#x9898;&#x76EE;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x770B;&#x5230;&#x4E86; <code>&#x7ED3;&#x679C;&#x552F;&#x4E00;</code>&#x3002;&#x6240;&#x4EE5;&#x8BC1;&#x660E;&#x7684;&#x8D77;&#x70B9;&#x5C31;&#x5728;&#x8FD9;&#x91CC;&#x3002;</p>
+<p>&#x56E0;&#x4E3A; $[0,n)$ &#x8303;&#x56F4;&#x5185;&#x7684;&#x6570;&#x81F3;&#x591A;&#x6709; $(n+1)$ &#x4E2A;&#xFF0C;&#x6700;&#x5C0F;&#x603B;&#x503C;&#x4E3A; $0$&#xFF0C;&#x6700;&#x5927;&#x603B;&#x503C;&#x4E3A; $n^2-1$&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x5217;&#x4E2D;&#x7684; $n^2$ &#x4E0D;&#x80FD;&#x88AB; $[0,n)$ &#x8303;&#x56F4;&#x5185;&#x7684;&#x6570;&#x4EE3;&#x66FF;&#xFF0C;&#x56E0;&#x6B64;&#x7B54;&#x6848;&#x552F;&#x4E00;&#x3002;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> n,s;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;s;</span><br><span class="line">        cout&lt;&lt;(s/(n*n))&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="B-Quality-vs-Quantity"><a href="#B-Quality-vs-Quantity" class="headerlink" title="B. Quality vs Quantity"></a>B. Quality vs Quantity</h3><p>&#x6D82;&#x8272;&#x95EE;&#x9898;&#x3002;&#x6709;&#x4E00;&#x4E2A;&#x5E8F;&#x5217; $a_1,\cdots,a_n$&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#xFF1A;&#x6807;&#x8BB0;&#x4E3A;&#x7EA2;&#x8272;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;&#x84DD;&#x8272;&#xFF0C;&#x4E0D;&#x6807;&#x8BB0;&#x989C;&#x8272;&#x3002;</p>
+<p>&#x8BBE;&#x6807;&#x8BB0;&#x7EA2;&#x8272;&#x7684;&#x5143;&#x7D20;&#x96C6;&#x5408;&#x4E3A; $R$&#xFF0C;&#x7EFF;&#x8272;&#x4E3A; $B$&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x662F;&#x5426;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;</p>
+<p>$$<br>\sum_{x\in R}x&gt;\sum_{x\in B}x<br>$$</p>
+<p>&#x4E14; $|R|&lt;|B|$&#xFF1F;</p>
+<p>&#x80FD;&#x8F93;&#x51FA; <code>YES</code>&#xFF0C;&#x4E0D;&#x80FD;&#x8F93;&#x51FA; <code>NO</code>&#x3002;&#xFF08;&#x867D;&#x7136;&#x8F93;&#x51FA; <code>yEs</code> &#x548C; <code>YeS</code> &#x662F;&#x4E00;&#x6837;&#x7684;&#xFF09;</p>
+<p>&#x8D2A;&#x5FC3;&#x3002;&#x60F3;&#x8981; $R$ &#x548C;&#x5927;&#x4E8E; $B$ &#x548C;&#xFF0C;&#x800C;&#x4E14; $R$ &#x6570;&#x91CF;&#x8FD8;&#x5F97;&#x66F4;&#x5C11;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x80FD;&#x8BA9; $R$ &#x4E2D;&#x7684;&#x5143;&#x7D20;&#x8FDC;&#x8FDC;&#x5927;&#x4E8E; $B$ &#x4E2D;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x6392;&#x4E00;&#x904D;&#x5347;&#x5E8F;&#xFF0C;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x9009;&#xFF0C;&#x5DE6;&#x8FB9;&#x9009; $x$ &#x4E2A;&#x6570;&#x5F53;&#x505A; $B$&#xFF0C;&#x53F3;&#x8FB9;&#x9009;&#x62E9; $(x+1)$ &#x4E2A;&#x6570;&#x5F53;&#x505A; $R$&#xFF0C;&#x5982;&#x679C;&#x626B;&#x5B8C;&#x5168;&#x5E8F;&#x5217;&#x90FD;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#xFF0C;&#x90A3;&#x5FC5;&#x7136;&#x662F; <code>nO</code> &#x4E86;&#x3002;</p>
+<p>&#x5355;&#x6B21; $O(n\log n)$&#xFF0C;&#x5747;&#x644A;&#x603B;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6; $O(n\log n)$&#x3002;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[<span class="number">1000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];</span><br><span class="line">        <span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> s1=a[<span class="number">1</span>]+a[<span class="number">2</span>],s2=a[n];</span><br><span class="line">        <span class="type">int</span> i=<span class="number">2</span>,j=n;</span><br><span class="line">        <span class="type">bool</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i+<span class="number">1</span>&lt;j)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(s1&lt;s2) {flag=<span class="number">1</span>;<span class="keyword">break</span>;}</span><br><span class="line">            i++;j--;</span><br><span class="line">            s1+=a[i];s2+=a[j];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(s1&lt;s2) flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(flag) cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-Factorials-and-Powers-of-Two"><a href="#C-Factorials-and-Powers-of-Two" class="headerlink" title="C. Factorials and Powers of Two"></a>C. Factorials and Powers of Two</h3><p>&#x79F0;&#x4E00;&#x4E2A;&#x6570;&#x4E3A;&#x5F3A;&#x6570;&#xFF0C;&#x5F53;&#x4E14;&#x4EC5;&#x5F53;&#x8FD9;&#x4E2A;&#x6570;&#x4E3A; $2^d$ &#x6216; $d!$&#xFF0C;&#x5176;&#x4E2D; $d\in N$&#x3002;&#xFF08;$N$ &#x4E3A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#x96C6;&#x5408;&#xFF09;</p>
+<p>&#x6C42;&#x4E00;&#x4E2A;&#x6570;&#x6700;&#x6700;&#x5C11;&#x53EF;&#x4EE5;&#x88AB;&#x5206;&#x89E3;&#x4E3A;&#x591A;&#x4E2A;&#x5F3A;&#x6570;&#x4E4B;&#x548C;&#xFF1F;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x53EF;&#x4EE5;&#x88AB;&#x5206;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#x8F93;&#x51FA; $-1$&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;$-1$ &#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x3002;&#x800C;&#x5BF9;&#x5E94;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x4E0A;&#x7684; $1$&#xFF0C;&#x5355;&#x72EC;&#x62FF;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x90FD;&#x662F;&#x5F3A;&#x6570;&#x3002;</p>
 <p>&#x6BD4;&#x5982; $7=(111)_2=1\times2^0+1\times2^1+1\times2^2$&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#xFF0C;&#x73B0;&#x5728;&#x5C31;&#x60F3;&#xFF0C;&#x5982;&#x4F55;&#x4F7F; $k$&#xFF08;&#x5373;&#x5206;&#x89E3;&#x4E2A;&#x6570;&#xFF09;&#x6700;&#x5C0F;&#x4E86;&#x3002;</p>
-<p>&#x82E5;&#x76F4;&#x63A5;&#x679A;&#x4E3E;&#x5F3A;&#x6570;&#x76F8;&#x52A0;&#xFF0C;&#x90A3;&#x4E48;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $2^{(\log_2 10^{12}+16)}$&#x3002;&#x6BD4;&#x8F83;&#x5371;&#x9669;&#x3002;</p>
+<p>&#x82E5;&#x76F4;&#x63A5;&#x679A;&#x4E3E;&#x5F3A;&#x6570;&#x76F8;&#x52A0;&#xFF0C;&#x90A3;&#x4E48;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $2^{(\log_2 1e12+16)}$&#x3002;&#x6BD4;&#x8F83;&#x5371;&#x9669;&#x3002;</p>
 <p>&#x4F46;&#x662F;&#xFF0C;&#x53D1;&#x73B0;&#x53EA;&#x8981;&#x786E;&#x5B9A;&#x9636;&#x4E58;&#x7684;&#x5F3A;&#x6570;&#xFF0C;&#x53CD;&#x8FC7;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x63A8;&#x51FA;&#x4E8C;&#x6B21;&#x5E42;&#x7684;&#x5F3A;&#x6570;&#x4E2A;&#x6570;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;&#x53EF;&#x4EE5;&#x53EA;&#x679A;&#x4E3E; $2^{16}$ &#x6B21;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
-<p>&#xFF08;$16$ &#x6765;&#x81EA;&#x4F55;&#x65B9;&#xFF1F;$10^{12}$ &#x7684;&#x9006;&#x9636;&#x4E58;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; $16$&#x3002;&#xFF09;</p>
+<p>&#xFF08;$16$ &#x6765;&#x81EA;&#x4F55;&#x65B9;&#xFF1F;$1e12$ &#x7684;&#x9006;&#x9636;&#x4E58;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; $16$&#x3002;&#xFF09;</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> minx=<span class="number">-1</span>;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[<span class="number">17</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">fac</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=x;i++) ans*=i;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">16</span>;i++) a[i]=<span class="built_in">fac</span>(i);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bitcount</span><span class="params">(<span class="type">long</span> <span class="type">long</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        ans+=(x&amp;<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span>(x&gt;&gt;=<span class="number">1</span>);</span><br><span class="line">    <span class="comment">// cout&lt;&lt;x&lt;&lt;&quot; &quot;&lt;&lt;ans&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> now,<span class="type">int</span> tot,<span class="type">long</span> <span class="type">long</span> sum)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(now==<span class="number">16</span>+<span class="number">1</span>||sum-a[now]&lt;<span class="number">0</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">// cout&lt;&lt;sum&lt;&lt;&quot; &quot;&lt;&lt;tot&lt;&lt;&quot; &quot;&lt;&lt;bitcount(sum)&lt;&lt;endl;</span></span><br><span class="line">        minx=<span class="built_in">min</span>(minx,tot+<span class="built_in">bitcount</span>(sum));</span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;debug &quot;&lt;&lt;minx&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">dfs</span>(now+<span class="number">1</span>,tot+<span class="number">1</span>,sum-a[now]);</span><br><span class="line">    <span class="built_in">dfs</span>(now+<span class="number">1</span>,tot,sum);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> n;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        minx=<span class="number">1e9</span>;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>,n);</span><br><span class="line">        cout&lt;&lt;minx&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
         </div>
         
@@ -263,7 +290,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://www.lotuses.net/2022/07/29/solution-cf1646c/",
+                text: "https://www.lotuses.net/2022/07/29/774-solution/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -275,9 +302,9 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf1646c/";
-            const title         = "「CF1646C Solution」";
-            const excerpt       = `Solution&#x9996;&#x5148;&#xFF0C;$-1$ &#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4EFB;&#x610F;...`;
+            const hostUrl       = "https://www.lotuses.net/2022/07/29/774-solution/";
+            const title         = "「Codeforces Round 774」";
+            const excerpt       = `A. Square Counting&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x5E8F;&#x5217; $a_1,\cdots,a_{n+1}$&#xFF0C;&#x6BCF;&#x4E00;&#x4E2...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -299,7 +326,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-07-29T07:53:59.372Z" itemprop="dateModified">最后编辑：2022-07-29</time>
+                    <time datetime="2022-10-16T11:44:04.343Z" itemprop="dateModified">最后编辑：2022-10-16</time>
                 </div>
             </div>
         </footer>
@@ -308,12 +335,12 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" CF1651A Playoff Solution" href="/2022/07/29/solution-cf1651a/">&lt; 上一篇</a>
+                <a title=" Codeforces Round 775" href="/2022/07/29/775-solution/">&lt; 上一篇</a>
             </div>
             
             
             <div class="nav-next clearfix">
-                <a title=" CF1646B Solution" href="/2022/07/29/solution-cf1646b/">下一篇 &gt;</a>
+                <a title=" CF1642A Hard Way 题解" href="/2022/07/29/solution-cf1642a/">下一篇 &gt;</a>
             </div>
             
         </nav>
@@ -326,8 +353,8 @@
         const init = () => {
             console.log('Gitalk loading...');
             const gitalk = new Gitalk(Object.assign({
-                id: '/2022/07/29/solution-cf1646c/',
-                path: '/2022/07/29/solution-cf1646c/'
+                id: '/2022/07/29/774-solution/',
+                path: '/2022/07/29/774-solution/'
             }, JSON.parse('{"clientID":"7a41543bab203de00687","clientSecret":"8dcbcc9cbd8d09fedb7023e655899940e13ef17d","repo":"BlogTalk","owner":"Lotuses-robot","admin":["Candinya","Lotuses-robot"],"distractionFreeMode":true,"proxy":"https://vercel.prohibitorum.top/github_access_token"}')));
 
             gitalk.render('gitalk-container');
@@ -405,7 +432,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Square-Counting"><span class="toc-text">A. Square Counting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Quality-vs-Quantity"><span class="toc-text">B. Quality vs Quantity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-Factorials-and-Powers-of-Two"><span class="toc-text">C. Factorials and Powers of Two</span></a></li></ol>
     </div>
 </aside>
                 
