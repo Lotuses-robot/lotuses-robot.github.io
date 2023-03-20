@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="&amp;#x5176;&amp;#x5B9E;&amp;#x8FD9;&amp;#x9053;&amp;#x9898;&amp;#x6E1F;&amp;#x6C34;&amp;#x7684; Solution&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316;&amp;#xFF1A;&amp;#x5728;&amp;#x4E00;&amp;#x5806;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x95F4;&amp;#xFF0C;&amp;#x627E;&amp;#x5230">
+  <meta name="description" content="其实这道题渟水的  Solution  题意简化： 在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。 其实，我们可以给这些字符串标号。 就比如说，按样例 1， 123456783&gt; 1    2     3alpha beta gamma&gt; 1     3    2alpha gamma beta 对正确序列标号为 1,2,31,2,31,2,3。 就可以将给出的序列变成 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P7755 POREDAK 题解">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-p7755/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="&amp;#x5176;&amp;#x5B9E;&amp;#x8FD9;&amp;#x9053;&amp;#x9898;&amp;#x6E1F;&amp;#x6C34;&amp;#x7684; Solution&amp;#x9898;&amp;#x610F;&amp;#x7B80;&amp;#x5316;&amp;#xFF1A;&amp;#x5728;&amp;#x4E00;&amp;#x5806;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x95F4;&amp;#xFF0C;&amp;#x627E;&amp;#x5230">
+<meta property="og:description" content="其实这道题渟水的  Solution  题意简化： 在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。 其实，我们可以给这些字符串标号。 就比如说，按样例 1， 123456783&gt; 1    2     3alpha beta gamma&gt; 1     3    2alpha gamma beta 对正确序列标号为 1,2,31,2,31,2,3。 就可以将给出的序列变成 1">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:57:58.000Z">
@@ -44,7 +44,6 @@
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
   
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
@@ -74,6 +73,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.04K
+                        815
                     
                     字
                 </li>
@@ -197,27 +197,29 @@
             </div>
             
             
-                <div class="kratos-post-inner-toc">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution"><span class="toc-number">1.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">题意简化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">实现：</span></a></li></ol></li></ol></li></ol>
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#solution"><span class="toc-number">1.</span> <span class="toc-text"> Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 题意简化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 实现：</span></a></li></ol></li></ol></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><p><del>&#x5176;&#x5B9E;&#x8FD9;&#x9053;&#x9898;&#x6E1F;&#x6C34;&#x7684;</del></p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h3 id="&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;"><a href="#&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;" class="headerlink" title="&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;"></a>&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;</h3><p>&#x5728;&#x4E00;&#x5806;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x95F4;&#xFF0C;&#x627E;&#x5230;&#x4E00;&#x4E9B;&#x4E24;&#x4E24;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
-<p>&#x5176;&#x5B9E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7ED9;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;<strong>&#x6807;&#x53F7;</strong>&#x3002;</p>
-<p>&#x5C31;&#x6BD4;&#x5982;&#x8BF4;&#xFF0C;&#x6309;&#x6837;&#x4F8B; 1&#xFF0C;</p>
+            <div itemprop="articleBody"><p><s>其实这道题渟水的</s></p>
+<h1 id="solution"><a class="markdownIt-Anchor" href="#solution"></a> Solution</h1>
+<h3 id="题意简化"><a class="markdownIt-Anchor" href="#题意简化"></a> 题意简化：</h3>
+<p>在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。</p>
+<p>其实，我们可以给这些字符串<strong>标号</strong>。</p>
+<p>就比如说，按样例 1，</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line"></span><br><span class="line">&gt; 1    2     3</span><br><span class="line">alpha beta gamma</span><br><span class="line"></span><br><span class="line">&gt; 1     3    2</span><br><span class="line">alpha gamma beta</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>&#x5BF9;&#x6B63;&#x786E;&#x5E8F;&#x5217;&#x6807;&#x53F7;&#x4E3A; $1,2,3$&#x3002;</p>
-<p>&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x7ED9;&#x51FA;&#x7684;&#x5E8F;&#x5217;&#x53D8;&#x6210; $1,3,2$&#x3002;</p>
-<p>&#x4E8E;&#x662F;&#x5C31;&#x53EA;&#x7528;&#x5BFB;&#x627E;&#x6B63;&#x786E;&#x7684;&#x7F16;&#x53F7;&#x5927;&#x5C0F;&#x5173;&#x7CFB;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x5E8F;&#x5217;&#x4E2D;&#x627E;&#x5230;&#x4E24;&#x7EC4;&#xFF1A;</p>
-<p>$(1,3)$ &#x548C; $(1,2)$&#x3002;&#x4E8E;&#x662F;&#x7B54;&#x6848;&#x5C31;&#x662F; $2/3$&#x3002;</p>
-<p>&#x6700;&#x540E;&#x53D8;&#x6210;&#x4E86;&#x627E;<del>&#x9006;&#x5E8F;&#x5BF9;</del>&#x6B63;&#x5E8F;&#x5BF9;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<h3 id="&#x5B9E;&#x73B0;&#xFF1A;"><a href="#&#x5B9E;&#x73B0;&#xFF1A;" class="headerlink" title="&#x5B9E;&#x73B0;&#xFF1A;"></a>&#x5B9E;&#x73B0;&#xFF1A;</h3><p>$\texttt{map}$ &#x7F16;&#x53F7;&#xFF0C;&#x518D;&#x7528; $\texttt{for}$ &#x679A;&#x4E3E;&#x5C31;&#x53EF;&#x4EE5;&#x5566;~</p>
-<p><del>&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x7528;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x89E3;&#x9006;&#x5E8F;&#x5BF9;</del>&#xFF0C;&#x4F46;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E0D;&#x9700;&#x8981;&#x3002;</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">map&lt;string,<span class="type">int</span>&gt; mp;</span><br><span class="line"><span class="type">int</span> od[<span class="number">2501</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">int</span> n,ans=<span class="number">0</span>;string str;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;str,mp[str]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;str,od[i]=mp[str];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span>(od[i]&lt;od[j]) ans++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>,ans,n*(n<span class="number">-1</span>)/<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
+<p>对正确序列标号为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,2,3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span></span></span></span>。</p>
+<p>就可以将给出的序列变成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,3,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span>。</p>
+<p>于是就只用寻找正确的编号大小关系即可。</p>
+<p>可以在上面序列中找到两组：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1,2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span>。于是答案就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">2/3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">/</span><span class="mord">3</span></span></span></span>。</p>
+<p>最后变成了找<s>逆序对</s>正序对的问题。</p>
+<h3 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现：</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">map</mtext></mrow><annotation encoding="application/x-tex">\texttt{map}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65278em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">map</span></span></span></span></span> 编号，再用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">for</mtext></mrow><annotation encoding="application/x-tex">\texttt{for}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">for</span></span></span></span></span> 枚举就可以啦~</p>
+<p><s>虽然可以用归并排序解逆序对</s>，但时间复杂度不需要。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">map&lt;string,<span class="type">int</span>&gt; mp;</span><br><span class="line"><span class="type">int</span> od[<span class="number">2501</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n,ans=<span class="number">0</span>;string str;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;str,mp[str]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;str,od[i]=mp[str];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span>(od[i]&lt;od[j]) ans++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>,ans,n*(n<span class="number">-1</span>)/<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>qaq</p>
 </div>
         </div>
@@ -286,8 +288,13 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-p7755/";
             const title         = "「P7755 POREDAK 题解」";
-            const excerpt       = `&#x5176;&#x5B9E;&#x8FD9;&#x9053;&#x9898;&#x6E1F;&#x6C34;&#x7684;
-Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
+            const excerpt       = `其实这道题渟水的
+ Solution
+ 题意简化：
+在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。
+其实，我们可以给这些字符串标号。
+就比如说，按样例 1，
+123456783&gt; 1    2     3alpha ...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -407,7 +414,7 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
@@ -415,7 +422,7 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96%EF%BC%9A"><span class="toc-text">题意简化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-text">实现：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#solution"><span class="toc-text"> Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-text"> 题意简化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 实现：</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
                 
@@ -579,6 +586,7 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -587,6 +595,8 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -625,6 +635,7 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -653,7 +664,6 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...`;
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

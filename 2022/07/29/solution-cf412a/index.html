@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#x7684;&amp;#x601D;&amp;#x8DEF;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5411;&amp;#x5DE6;&amp;#x518D;&amp;#x5411;&amp;#x53F3;&amp;#x3002; &amp;#x7ED8;&amp;#x5B57;&amp;#x7B26;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x662F;&amp;#x56FA;&amp;#x5B9A;&amp;#x7684">
+  <meta name="description" content="很清晰的思路，就是向左再向右。 绘字符的时间是固定的，想要减少只能减少中间的搬梯子浪费的时间。 向左，为了一次性解决左边的字符，如果不是一直向左，那么中途必定向右，而左边还有未处理的字符，说明还需要返回，这时就浪费了两个小时；向右同理。所以，处理左右两边的字符，要么不处理，要么就直接处理完。 那么，先向左还是先向右呢？ 观察发现，先向左，那么中途浪费的时间就是左边节点数的两倍；先向右是右边节点数的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF412A">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf412a/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#x7684;&amp;#x601D;&amp;#x8DEF;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5411;&amp;#x5DE6;&amp;#x518D;&amp;#x5411;&amp;#x53F3;&amp;#x3002; &amp;#x7ED8;&amp;#x5B57;&amp;#x7B26;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x662F;&amp;#x56FA;&amp;#x5B9A;&amp;#x7684">
+<meta property="og:description" content="很清晰的思路，就是向左再向右。 绘字符的时间是固定的，想要减少只能减少中间的搬梯子浪费的时间。 向左，为了一次性解决左边的字符，如果不是一直向左，那么中途必定向右，而左边还有未处理的字符，说明还需要返回，这时就浪费了两个小时；向右同理。所以，处理左右两边的字符，要么不处理，要么就直接处理完。 那么，先向左还是先向右呢？ 观察发现，先向左，那么中途浪费的时间就是左边节点数的两倍；先向右是右边节点数的">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:56:06.000Z">
@@ -44,7 +44,6 @@
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
   
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
@@ -74,6 +73,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.82K
+                        1146
                     
                     字
                 </li>
@@ -197,14 +197,15 @@
             </div>
             
             
+            
             <hr />
-            <div itemprop="articleBody"><p>&#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x662F;&#x5411;&#x5DE6;&#x518D;&#x5411;&#x53F3;&#x3002;</p>
-<p>&#x7ED8;&#x5B57;&#x7B26;&#x7684;&#x65F6;&#x95F4;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x60F3;&#x8981;&#x51CF;&#x5C11;&#x53EA;&#x80FD;<strong>&#x51CF;&#x5C11;&#x4E2D;&#x95F4;&#x7684;&#x642C;&#x68AF;&#x5B50;&#x6D6A;&#x8D39;&#x7684;&#x65F6;&#x95F4;</strong>&#x3002;</p>
-<p>&#x5411;&#x5DE6;&#xFF0C;&#x4E3A;&#x4E86;&#x4E00;&#x6B21;&#x6027;&#x89E3;&#x51B3;&#x5DE6;&#x8FB9;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x4E00;&#x76F4;&#x5411;&#x5DE6;&#xFF0C;&#x90A3;&#x4E48;&#x4E2D;&#x9014;&#x5FC5;&#x5B9A;&#x5411;&#x53F3;&#xFF0C;&#x800C;&#x5DE6;&#x8FB9;&#x8FD8;&#x6709;&#x672A;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x8BF4;&#x660E;&#x8FD8;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#xFF0C;<strong>&#x8FD9;&#x65F6;&#x5C31;&#x6D6A;&#x8D39;&#x4E86;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;</strong>&#xFF1B;&#x5411;&#x53F3;&#x540C;&#x7406;&#x3002;<strong>&#x6240;&#x4EE5;&#xFF0C;&#x5904;&#x7406;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x8981;&#x4E48;&#x4E0D;&#x5904;&#x7406;&#xFF0C;&#x8981;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x5B8C;&#x3002;</strong></p>
-<p>&#x90A3;&#x4E48;&#xFF0C;&#x5148;&#x5411;&#x5DE6;&#x8FD8;&#x662F;&#x5148;&#x5411;&#x53F3;&#x5462;&#xFF1F;</p>
-<p>&#x89C2;&#x5BDF;&#x53D1;&#x73B0;&#xFF0C;&#x5148;&#x5411;&#x5DE6;&#xFF0C;&#x90A3;&#x4E48;&#x4E2D;&#x9014;&#x6D6A;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x5C31;&#x662F;&#x5DE6;&#x8FB9;&#x8282;&#x70B9;&#x6570;&#x7684;&#x4E24;&#x500D;&#xFF1B;&#x5148;&#x5411;&#x53F3;&#x662F;&#x53F3;&#x8FB9;&#x8282;&#x70B9;&#x6570;&#x7684;&#x4E24;&#x500D;&#x3002;<strong>&#x81EA;&#x7136;&#x662F;&#x4F18;&#x5148;&#x9009;&#x62E9;&#x8282;&#x70B9;&#x6570;&#x5C11;&#x7684;&#x4E86;&#xFF01;</strong></p>
-<p>&#x90A3;&#x4E48;&#xFF0C;&#x5206;&#x7C7B;&#x8BA8;&#x8BBA;&#xFF0C;&#x5E76;&#x6574;&#x7406;&#x6A21;&#x62DF;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x6253;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>((n-k)&gt;=k)  <span class="comment">// &#x5206;&#x7C7B;&#x8BA8;&#x8BBA;</span></span><br><span class="line">    {             <span class="comment">// &#x6A21;&#x62DF;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=k<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k+<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+            <div itemprop="articleBody"><p>很清晰的思路，就是向左再向右。</p>
+<p>绘字符的时间是固定的，想要减少只能<strong>减少中间的搬梯子浪费的时间</strong>。</p>
+<p>向左，为了一次性解决左边的字符，如果不是一直向左，那么中途必定向右，而左边还有未处理的字符，说明还需要返回，<strong>这时就浪费了两个小时</strong>；向右同理。<strong>所以，处理左右两边的字符，要么不处理，要么就直接处理完。</strong></p>
+<p>那么，先向左还是先向右呢？</p>
+<p>观察发现，先向左，那么中途浪费的时间就是左边节点数的两倍；先向右是右边节点数的两倍。<strong>自然是优先选择节点数少的了！</strong></p>
+<p>那么，分类讨论，并整理模拟思路，就打出这样的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>((n-k)&gt;=k)  <span class="comment">// 分类讨论</span></span><br><span class="line">    &#123;             <span class="comment">// 模拟</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=k<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k+<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -271,7 +272,9 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf412a/";
             const title         = "「CF412A」";
-            const excerpt       = `&#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x662F;&#x5411;&#x5DE6;&#x518D;&#x5411;&#x53F3;&#x30...`;
+            const excerpt       = `很清晰的思路，就是向左再向右。
+绘字符的时间是固定的，想要减少只能减少中间的搬梯子浪费的时间。
+向左，为了一次性解决左边的字符，如果不是一直向左，那么中途必定向右，而左边还有未处理的字符，说明还需要返回，这时就浪费了两个小时；向右同理...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -551,6 +554,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -559,6 +563,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -597,6 +603,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -625,7 +632,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

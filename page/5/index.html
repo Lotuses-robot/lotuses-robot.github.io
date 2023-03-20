@@ -43,7 +43,6 @@
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
   
-  
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
@@ -72,6 +71,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -187,7 +187,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x53EA;&#x80FD;&#x8DF3;&#x4E00;&#x6B21;&#xFF0C;&#x90A3;&#x4E48;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x53EA;&#x53...
+                                 Solution
+只能跳一次，那么说明我们只可能通过一次大跳来跳过所有含水格子。大跳的代价与距离成正比，所以大跳的距离越小越好。
+那么，大跳就从最左边的水格子前起跳，跳到最右边的水格子后即可。
+1234567891011121314...
                             
                         </p>
                     </div>
@@ -237,7 +240,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x91CD;&#x70B9;&#x5728;&#x4E8E;&#x5982;&#x4F55;&#x5229;&#x7528; &#x201C;&#x6BCF;&#x4E2A;&#x4EBA;&#x4F20;&#x5...
+                                 Solution
+重点在于如何利用 “每个人传出球的次数是给定的（传入不算次数）。”
+找出踢球数最大的人，这个人的踢球数可以消耗其他人的踢球数。
+若其他人的踢球数总和大于踢球数的人，这些人可以自己内部对踢（无论是一对一还是多对多，反...
                             
                         </p>
                     </div>
@@ -287,8 +293,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x7ED3;&#x8BBA;&#xFF1A; $ans=\lfloor s/n^2\rfloor$
-&#x9898;&#x76EE;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x770B;&...
+                                 Solution
+结论： ans=⌊s/n2⌋ans=\lfloor s/n^2\rfloorans=⌊s/n2⌋
+题目中，首先看到了 结果唯一。所以证明的起点就在这里。
+因为 [0,n)[0,n)[0,n) 范围内的数至多有 (n...
                             
                         </p>
                     </div>
@@ -338,7 +346,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x8D2A;&#x5FC3;&#x3002;&#x60F3;&#x8981; $R$ &#x548C;&#x5927;&#x4E8E; $B$ &#x548C;&#xFF0C;&#x800C;&#x4E14; $R...
+                                 Solution
+贪心。想要 RRR 和大于 BBB 和，而且 RRR 数量还得更少，那么只能让 RRR 中的元素远远大于 BBB 中元素。
+那么排一遍升序，从左到右选，左边选 xxx 个数当做 BBB，右边选择 (x+1)(x+1...
                             
                         </p>
                     </div>
@@ -388,7 +398,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x9996;&#x5148;&#xFF0C;$-1$ &#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4EFB;&#x610F;...
+                                 Solution
+首先，−1-1−1 是不可能的。因为任意一个非负整数都可以转换成对应的二进制。而对应二进制位上的 111，单独拿出来，就都是强数。
+比如 7=(111)2=1×20+1×21+1×227=(111)_2=1\tim...
                             
                         </p>
                     </div>
@@ -438,7 +450,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Transplate$1\sim 2^n$ &#x8FD9;&#x4E9B;&#x6570;&#x5C06;&#x8FDB;&#x884C;&#x6DD8;&#x6C70;&#x8D5B;&#x3002;&#x89C4;&#x5219...
+                                 Transplate
+1∼2n1\sim 2^n1∼2n 这些数将进行淘汰赛。规则如下。
+
+第一轮比赛由相邻两个数比较。即 (1,2),(3,4),⋯(1,2),(3,4),\cdots(1,2),(3,4),⋯。
+之后比赛由上一轮...
                             
                         </p>
                     </div>
@@ -488,7 +504,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x9898;&#x76EE;&#x8981;&#x6C42;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F; $i,j$ &#x90FD;&#x8981;&#x6EE1;&#x8DB3; $a_i+...
+                                 Solution
+题目要求对于任意 i,ji,ji,j 都要满足 ai+aj≤2⋅∣ai−aj∣a_i+a_j\le 2\cdot|a_i-a_j|ai​+aj​≤2⋅∣ai​−aj​∣。
+有绝对值，不妨 ai≤aja_i\le a...
                             
                         </p>
                     </div>
@@ -538,7 +556,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x53D1;&#x73B0;&#x53EA;&#x8981;&#x9009;&#x62E9;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x90FD;&#x53...
+                                 Solution
+发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。
+若设处理的两个数为 axa_xax​ 和 aya_yay​，
+如果 x&lt;y−1x&lt;y-1x&lt;y−1，只要翻转 [x,y−1][...
                             
                         </p>
                     </div>
@@ -588,7 +609,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x521D;&#x770B;&#x8FD9;&#x9053;&#x9898;&#xFF0C;&#x8BF6;&#xFF0C;&#x6709;&#x70B9;&#x96BE;&#x5EA6;&#xFF0C;&#x67...
+                                 Solution
+初看这道题，诶，有点难度，果然是 Div.1 + Div.2 的难度啊，AC 自动机？
+啊不不不，完全可以不用 AC 自动机。
+可以发现，只需要查找第一个字母是否出现在后面即可。
+设字符串为 si (1≤i≤∣s∣...
                             
                         </p>
                     </div>
@@ -638,8 +663,12 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x66B4; &#x529B; &#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x4E0D;&#x6253;&#x7684;&#x3002;
-&#x8FD9;&#x9053;&#x9898;&#...
+                                 Solution
+暴 力 是不可能不打的。
+这道题目有两种暴力方法。
+一种从合并角度看，将相邻的两个数依次合并，看是否能合并完成。
+但我选择的是更直观的暴力打法。
+将总和依次分解，想到每一次的分解结果要是有对应的数字就消掉，剩下的分...
                             
                         </p>
                     </div>
@@ -897,6 +926,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -905,6 +935,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -943,6 +975,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -971,7 +1004,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

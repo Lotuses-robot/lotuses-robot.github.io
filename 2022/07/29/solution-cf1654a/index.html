@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="Solution&amp;#x53D1;&amp;#x73B0;&amp;#x53EA;&amp;#x8981;&amp;#x9009;&amp;#x62E9;&amp;#x4EFB;&amp;#x610F;&amp;#x4E24;&amp;#x4E2A;&amp;#x6570;&amp;#xFF0C;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x901A;&amp;#x8FC7;&amp;#x4E00;&amp;#x6B21;&amp;#x64CD;&amp;#x4F5C;&amp;#x5C06;&amp;#x4ED6;&amp;#x4EEC;">
+  <meta name="description" content="Solution 发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。 若设处理的两个数为 axa_xax​ 和 aya_yay​， 如果 x&lt;y−1x&lt;y-1x&lt;y−1，只要翻转 [x,y−1][x,y-1][x,y−1] 即可。 如果 x&gt;y+1x&gt;y+1x&gt;y+1，只要翻转 [y+1,x][y+1,x][y+1,x] 即可。 那么，只要找">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1654A Solution">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf1654a/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="Solution&amp;#x53D1;&amp;#x73B0;&amp;#x53EA;&amp;#x8981;&amp;#x9009;&amp;#x62E9;&amp;#x4EFB;&amp;#x610F;&amp;#x4E24;&amp;#x4E2A;&amp;#x6570;&amp;#xFF0C;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x901A;&amp;#x8FC7;&amp;#x4E00;&amp;#x6B21;&amp;#x64CD;&amp;#x4F5C;&amp;#x5C06;&amp;#x4ED6;&amp;#x4EEC;">
+<meta property="og:description" content="Solution 发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。 若设处理的两个数为 axa_xax​ 和 aya_yay​， 如果 x&lt;y−1x&lt;y-1x&lt;y−1，只要翻转 [x,y−1][x,y-1][x,y−1] 即可。 如果 x&gt;y+1x&gt;y+1x&gt;y+1，只要翻转 [y+1,x][y+1,x][y+1,x] 即可。 那么，只要找">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:53:36.000Z">
@@ -44,7 +44,6 @@
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
   
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
@@ -74,6 +73,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1304
+                        757
                     
                     字
                 </li>
@@ -197,18 +197,20 @@
             </div>
             
             
-                <div class="kratos-post-inner-toc">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.</span> <span class="toc-text">Solution</span></a></li></ol>
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">1.</span> <span class="toc-text"> Solution</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>&#x53D1;&#x73B0;&#x53EA;&#x8981;&#x9009;&#x62E9;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x5C06;&#x4ED6;&#x4EEC;&#x4E24;&#x4E2A;&#x653E;&#x5728;&#x76F8;&#x90BB;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
-<p>&#x82E5;&#x8BBE;&#x5904;&#x7406;&#x7684;&#x4E24;&#x4E2A;&#x6570;&#x4E3A; $a_x$ &#x548C; $a_y$&#xFF0C;</p>
-<p>&#x5982;&#x679C; $x&lt;y-1$&#xFF0C;&#x53EA;&#x8981;&#x7FFB;&#x8F6C; $[x,y-1]$ &#x5373;&#x53EF;&#x3002;</p>
-<p>&#x5982;&#x679C; $x&gt;y+1$&#xFF0C;&#x53EA;&#x8981;&#x7FFB;&#x8F6C; $[y+1,x]$ &#x5373;&#x53EF;&#x3002;</p>
-<p>&#x90A3;&#x4E48;&#xFF0C;&#x53EA;&#x8981;&#x627E;&#x5230;&#x5E8F;&#x5217;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x52A0;&#x548C;&#x8F93;&#x51FA;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x65F6; $O(\sum n)$&#xFF0C;&#x7A7A; $O(1)$&#x3002;</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> T,max1,max2;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> n,k;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;max1&gt;&gt;max2;</span><br><span class="line">        <span class="keyword">if</span>(max1&lt;max2) <span class="built_in">swap</span>(max1,max2);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">3</span>;i&lt;=n;i++)</span><br><span class="line">        {</span><br><span class="line">            cin&gt;&gt;k;</span><br><span class="line">            <span class="keyword">if</span>(k&gt;max1) max2=max1,max1=k;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(k&gt;max2) max2=k;</span><br><span class="line">        }</span><br><span class="line">        cout&lt;&lt;max1+max2&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+            <div itemprop="articleBody"><h3 id="solution"><a class="markdownIt-Anchor" href="#solution"></a> Solution</h3>
+<p>发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。</p>
+<p>若设处理的两个数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">a_x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">a_y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，</p>
+<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>y</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x&lt;y-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，只要翻转 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[x,y-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 即可。</p>
+<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&gt;</mo><mi>y</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x&gt;y+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，只要翻转 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>y</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[y+1,x]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">]</span></span></span></span> 即可。</p>
+<p>那么，只要找到序列中最大的两个数，加和输出即可。</p>
+<p>时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mo>∑</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\sum n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，空 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T,max1,max2;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n,k;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;max1&gt;&gt;max2;</span><br><span class="line">        <span class="keyword">if</span>(max1&lt;max2) <span class="built_in">swap</span>(max1,max2);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">3</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;k;</span><br><span class="line">            <span class="keyword">if</span>(k&gt;max1) max2=max1,max1=k;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(k&gt;max2) max2=k;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;max1+max2&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -275,7 +277,10 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf1654a/";
             const title         = "「CF1654A Solution」";
-            const excerpt       = `Solution&#x53D1;&#x73B0;&#x53EA;&#x8981;&#x9009;&#x62E9;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x90FD;&#x53...`;
+            const excerpt       = ` Solution
+发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。
+若设处理的两个数为 axa_xax​ 和 aya_yay​，
+如果 x&lt;y−1x&lt;y-1x&lt;y−1，只要翻转 [x,y−1][...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -395,7 +400,7 @@
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
@@ -403,7 +408,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-text"> Solution</span></a></li></ol>
     </div>
 </aside>
                 
@@ -567,6 +572,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -575,6 +581,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -613,6 +621,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -641,7 +650,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

@@ -43,7 +43,6 @@
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
   
-  
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
@@ -72,6 +71,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -187,7 +187,13 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x89C2;&#x5BDF;&#x9898;&#x9762;&#xFF0C;&#x7531;&#x6570;&#x636E;&#x8303;&#x56F4;&#x53EF;&#x77E5;&#x8FD9;&#x90...
+                                 Solution
+观察题面，由数据范围可知这道题的复杂度为 O(n log n) 作法为贪心。
+如何贪心呢？
+在与 @ryanright 的交锋往中，认识到一点他的做题技巧：
+1、能做的题先做；
+2、做不了的选择最高收益的做。
+所以...
                             
                         </p>
                     </div>
@@ -237,8 +243,14 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5982;&#x9898;&#x3002;
-&#x56FE;&#x8BBA;&#x5E76;&#x67E5;&#x96C6;&#x7B97;&#x6CD5;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;(1) ...
+                                如题。
+ 图论
+ 并查集
+算法学习笔记(1) : 并查集
+
+“按秩合并”并未看完
+
+
                             
                         </p>
                     </div>
@@ -288,7 +300,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Day -114514&#x8003;&#x5B8C; csp&#xFF0C;&#x5FC3;&#x6001;&#x6BD4;&#x8F83;&#x70B8;&#x88C2;&#xFF0C;&#x6709;&#x70B9;&#x606...
+                                 Day -114514
+考完 csp，心态比较炸裂，有点恢复不起来，然后听说 noip 有机会去玩，心态好了一些。于是就等了等，最后我提高三等奖也能蹭个名额，就准备足了去玩一玩。
+于是…就十分离谱的去参加了 noip2021。
+ D...
                             
                         </p>
                     </div>
@@ -338,7 +353,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x597D;&#x4E45;&#x6CA1;&#x6709;&#x5199;&#x9898;&#x89E3;&#x4E86;&#xFF0C;&#x793E;&#x8D21;&#x6389;&#x7684;&#x592A;&#x4F...
+                                好久没有写题解了，社贡掉的太低了，就来写入门题解了
+ Solution
+观察题面，大模拟。
+模拟思路，是维护三个变量 f,s,tf,s,tf,s,t，分别代表一级标题序号，二级标题序号以及三级标题序号。
+−1-1−1 代表到上一个父标...
                             
                         </p>
                     </div>
@@ -388,9 +407,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x554A;&#x2026;&#x592A;&#x5751;&#x4E86;
-&#x6211;&#x653E;&#x5F03;&#x4E86;
-&#x4E3A;&#x4E86;&#x8BA9;&#x540E;&#x4EBA;&#x...
+                                啊…太坑了
+我放弃了
+为了让后人不再掉坑，我在这里将刘汝佳在《算法竞赛入门经典——训练指南》中的翻译打出来。
+（为了加强严密性，题目文字根据官方数据进行了增删）
+你的任务是为一个假想的 3KP 操作系统编写一个简单的 Bash 模拟器...
                             
                         </p>
                     </div>
@@ -440,7 +461,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x8FD9;&#x662F;&#x4E00;&#x9053;&#x7ED3;&#x8BBA;&#x8D2A;&#x5FC3;&#x9898;&#x3002;&#x7ED3;&#x8BBA;&#x7B80;&#x5355;&#xFF...
+                                这是一道结论贪心题。结论简单，但是推倒的过程可能不止 入门。（个人感觉，可能有普及）
+先说结论，对于每个 s(sum),cs(sum),cs(sum),c 都有答案
+(s mod c)⌊sc+1⌋2+(c−s mod c)⌊sc⌋2(...
                             
                         </p>
                     </div>
@@ -490,8 +513,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x89C2;&#x5BDF;&#x539F;&#x5E8F;&#x5217;&#xFF0C;$$(x_1-x_2)+(x_2-x_3)+\cdots+(x_{n-1}-x_n)$$
-&#x53EF;&#x4EE5;&#x5316;...
+                                观察原序列，
+(x1−x2)+(x2−x3)+⋯+(xn−1−xn)(x_1-x_2)+(x_2-x_3)+\cdots+(x_{n-1}-x_n)
+(x1​−x2​)+(x2​−x3​)+⋯+(xn−1​−xn​)
+可以化简得到
+x...
                             
                         </p>
                     </div>
@@ -541,7 +567,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5F88;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x662F;&#x5411;&#x5DE6;&#x518D;&#x5411;&#x53F3;&#x30...
+                                很清晰的思路，就是向左再向右。
+绘字符的时间是固定的，想要减少只能减少中间的搬梯子浪费的时间。
+向左，为了一次性解决左边的字符，如果不是一直向左，那么中途必定向右，而左边还有未处理的字符，说明还需要返回，这时就浪费了两个小时；向右同理...
                             
                         </p>
                     </div>
@@ -591,7 +619,8 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5982;&#x9898;&#x76EE;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x9053;&#x7B80;&#x5355;&#x7684;&#x9898;&#x30...
+                                如题目名字，这是一道简单的题。观察式子，
+{∑ki≥0,(∑i=1nki)=k[k!∏i=1n(ki!)⋅∏i=1n(i!)ki]} mod p\Big\{\sum_{k_i\geq 0,(\sum_{i=1}^n k_i)=k} \...
                             
                         </p>
                     </div>
@@ -641,7 +670,32 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x6D1B;&#x8C37;&#x535A;&#x5BA2;&#x8868;&#x683C;&#x8F83;&#x4E3A;&#x9B3C;&#x755C;&#xFF0C;&#x6B64;&#x6587;&#x7AE0;&#x5C...
+                                洛谷博客表格较为鬼畜，此文章将同步发表在 CSDN 上。
+ 字母键及主键盘数字键
+
+
+
+键名称
+键代码
+
+
+
+
+A ~ Z
+65 ~ 90
+
+
+0 ~ 9 和 ! ~ )
+48 ~ 57
+
+
+
+ 小键盘数字及符号键
+
+
+
+键名称
+键代...
                             
                         </p>
                     </div>
@@ -899,6 +953,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -907,6 +962,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -945,6 +1002,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -973,7 +1031,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

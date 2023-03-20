@@ -43,7 +43,6 @@
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
   
-  
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
@@ -72,6 +71,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -187,8 +187,9 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x6574;&#x7406;&#x5C01;&#x88C5;&#x81EA; ryanright &#x7684;&#x535A;&#x5BA2;
-&#x9AD8;&#x7CBE;&#x5EA6;12345678910111213...
+                                整理封装自 ryanright 的博客
+ 高精度
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505...
                             
                         </p>
                     </div>
@@ -238,7 +239,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x9898;&#x610F;&#x7B80;&#x5316;&#x516D;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x5B57;&#x6BCD;&#x59...
+                                 题意简化
+六个字母，任意一字母大写若出现在小写的前面，输出 NO，否则输出 YES。
+ Solution
+字典暴力模拟，这样能够减少代码量。使用 toupper() 使代码更整洁。
+1234567891011121314151617...
                             
                         </p>
                     </div>
@@ -288,8 +293,12 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x7FFB;&#x8BD1;&#x5DF2;&#x4EA4;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x6B63;&#x89E3;&#x3002;
-Solution&#x663E;&#x7136;&#xF...
+                                翻译已交，直接上正解。
+ Solution
+显然，直接 dfs 生成排列-测试会超时。
+想到可以在 dfs 过程中进行测试（判断下一个放置的数字是否满足反斐波那契序列的条件）。
+于是代码就长这样：
+123456789101112131...
                             
                         </p>
                     </div>
@@ -339,7 +348,13 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x5173;&#x4E8E;&#x67D0;&#x4E00;&#x6761;&#x7EBF;&#x6BB5;&#x662F;&#x5426;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF...
+                                 Solution
+关于某一条线段是否是安全的（以下不考虑端点），有两个结论。
+
+不是平行于 y=0y=0y=0 的线段必定是安全的；
+若这条线段中较低的点（即 yyy 坐标较小的点）下方没有其他边，那么这条线段必定是安全的。
+
+第二...
                             
                         </p>
                     </div>
@@ -389,7 +404,11 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                A. Square Counting&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x5E8F;&#x5217; $a_1,\cdots,a_{n+1}$&#xFF0C;&#x6BCF;&#x4E00;&#x4E2...
+                                 A. Square Counting
+给你一个序列 a1,⋯ ,an+1a_1,\cdots,a_{n+1}a1​,⋯,an+1​，每一个元素满足两个条件：
+
+0≤ai&lt;n0\le a_i&lt;n0≤ai​&lt;n
+ai=...
                             
                         </p>
                     </div>
@@ -439,7 +458,10 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                A. Game&#x6709; $n$ &#x4E2A;&#x6A2A;&#x5411;&#x6392;&#x5217;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E8F;&#x53F7;&#x4E3A; ...
+                                 A. Game
+有 nnn 个横向排列的位置，序号为 1∼n1\sim n1∼n，每个位置可能有水，也可能是空的。
+向相邻格子移动是不需要花费的。
+在每组数据中，你只能跳一次。你可以跳任意格远。代价为 ∣dj−di∣|d_j-d_i...
                             
                         </p>
                     </div>
@@ -489,7 +511,9 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                A. Deletions of Two Adjacent Letters&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x957F;&#x5EA6;&#x4E3A;&#x5947;&...
+                                 A. Deletions of Two Adjacent Letters
+一个字符串，长度为奇数（长度不大于 494949），只可以在其中删除连续的两个字符。问是否能使删剩下的字符（必须删到一个字符）为给定字符？
+能则输出 YES，...
                             
                         </p>
                     </div>
@@ -539,7 +563,10 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x5904;&#x5728;&#x5076;&#x6570;&#x4F4D;&#x4E0A;&#xFF0C;&#x90...
+                                 Solution
+如果这个字符处在偶数位上，那么他的左边或者右边就都有奇数个字符，不可能通过删去连续的两个字符来留下这个字符（左右不能跨分界线删除）。
+注意同一个字符可能出现多次。模拟即可。
+12345678910111213141...
                             
                         </p>
                     </div>
@@ -589,7 +616,9 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x663E;&#x7136;&#x5728;&#x8303;&#x56F4;&#x533A;&#x95F4;&#x5185;&#x53D8;&#x5316;&#x5927;&#x7684;&#x662F;&#x53...
+                                 Solution
+显然在范围区间内变化大的是右边的 x mod ax\bmod axmoda（为什么？）。
+但也会出现 ⌊xa⌋\lfloor\frac{x}{a}\rfloor⌊ax​⌋ 变化的情况。那么，最大值就有两种情况了（即...
                             
                         </p>
                     </div>
@@ -639,7 +668,10 @@ Solution&#x663E;&#x7136;&#xF...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                Solution&#x53EA;&#x8981;&#x53D6;&#x51FA; $2n$ &#x4E2A;&#x70B9;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BF4;&#x660E;&#x8FD9...
+                                 Solution
+只要取出 2n2n2n 个点，都可以说明这些点可以配对（从左到右，从右到左依次配对）。
+所以，我们只需要以代价排一遍序，左边取 2n2n2n 个数，再以坐标为关键字排序配对即可。
+12345678910111213...
                             
                         </p>
                     </div>
@@ -897,6 +929,7 @@ Solution&#x663E;&#x7136;&#xF...
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -905,6 +938,8 @@ Solution&#x663E;&#x7136;&#xF...
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -943,6 +978,7 @@ Solution&#x663E;&#x7136;&#xF...
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -971,7 +1007,6 @@ Solution&#x663E;&#x7136;&#xF...
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

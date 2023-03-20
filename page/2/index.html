@@ -43,7 +43,6 @@
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
   
-  
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
@@ -72,6 +71,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -187,8 +187,12 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x6570;&#x636E;&#x70B9;&#x671B; Luogu &#x80FD;&#x5B8C;&#x5584;&#x4E0B;
-&#x597D;&#xFF0C;&#x8BB2;&#x89E3;&#x6B63;&#x5F...
+                                数据点望 Luogu 能完善下
+好，讲解正式开始。
+拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。
+我们要模拟啥呢？
+ 1、首先，对于每一个牛，我们都要检查他能不能离开。
+对于每一...
                             
                         </p>
                     </div>
@@ -238,7 +242,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5199;&#x8FD9;&#x7BC7;&#x9898;&#x89E3;&#x82B1;&#x4E86;&#x6211;&#x5F88;&#x591A;&#x4E0D;&#x5C11;&#x65F6;&#x95F4;&#xFF...
+                                写这篇题解花了我很多不少时间，希望能过 awa
+题意：
+有 mmm 个数，这 mmm 个数能否由另外 nnn 个数通过加减运算获得。
+对于每一次加减的操作，结果不能小于 000（角度不能小于 000）；
+对于大于等于 36036036...
                             
                         </p>
                     </div>
@@ -288,7 +296,13 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x867D;&#x7136;&#x6211;&#x4F3C;&#x4E4E;&#x89E3;&#x91CA;&#x660E;&#x4E86;&#x8D2A;&#x5FC3;&#x662F;&#x53EF;&#x884C;&#x76...
+                                虽然我似乎解释明了贪心是可行的，但是我还是有些不爽
+dp 做更直观吧
+ Solution
+入手这道题，看了看，就直接奔去写贪心。
+至于如何贪心？
+题目大意：对于每一个操作有两种操作选择，使终串全为 A\texttt{A}A 。
+对于这...
                             
                         </p>
                     </div>
@@ -338,8 +352,13 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5176;&#x5B9E;&#x8FD9;&#x9053;&#x9898;&#x6E1F;&#x6C34;&#x7684;
-Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...
+                                其实这道题渟水的
+ Solution
+ 题意简化：
+在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。
+其实，我们可以给这些字符串标号。
+就比如说，按样例 1，
+123456783&gt; 1    2     3alpha ...
                             
                         </p>
                     </div>
@@ -389,8 +408,14 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x975E;&#x5E7F;&#x544A;&#xFF1A;csdn&#x7684;&#x535A;&#x5BA2; 
-&#x4E1C;&#x897F;&#x592A;&#x591A;&#xFF0C;luogu&#x5217;&#...
+                                非广告：csdn的博客
+东西太多，luogu列表不太友好(没有有标题链接，不便寻找）
+ qwq
+为SCP初赛选手（我）收集的各种定理qwq
+更新：
+1、为了初赛都能用，不限于定理了
+2、主旨为在短时间内复习各算法，备初赛
+3、请确定你...
                             
                         </p>
                     </div>
@@ -440,7 +465,13 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x8FD9;&#x9053;&#x9898;&#x8FD8;&#x662F;&#x5F88;&#x6C34;&#x7684;&#xFF0C;&#x505A;&#x4E86;&#x4E09;&#x5929;&#x624D;&#x50...
+                                这道题还是很水的，做了三天才做出来
+ Solution
+一看区间操作，就是线段树。
+不过虽然说着简单，但是细节有很多，请注意这里讲到的每一个细节。
+ 解题思路
+观察下放操作，先是升序，再是降序。
+若是直接下放，会出现很多复杂的情况，比...
                             
                         </p>
                     </div>
@@ -491,7 +522,10 @@ Solution&#x9898;&#x610F;&#x7B80;&#x5316;&#xFF1A;&#x5...
                         <p itemProp="description">
                             
                                 Long time no write, Please pass it over!!!
-Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
+ Solution
+最近都在刷水题，就看到了这道水题
+模拟题，只要读懂都会做qwq
+题意即为：一堆学生去取钱，取的钱数按照顺序，成递增的序列，为 1...
                             
                         </p>
                     </div>
@@ -541,8 +575,16 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                solution&#x9898;&#x610F;&#x7B80;&#x5316;
-&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x7...
+                                 solution
+题意简化
+一个字符串，将所有的 _ 替换成大写字母，使结果字符串符合要求：
+1、不包含三个连续 元音 或 辅音 字母；
+2、字符串中至少有一个 L 。
+求最终字符串可能的个数。
+
+
+
+看到这道题，即想到了万能的算法...
                             
                         </p>
                     </div>
@@ -592,8 +634,14 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x53C8;&#x53CC;&#x53D2;&#x53D5;&#x6C34;&#x4E86;&#x4E00;&#x7BC7;&#x9898;&#x89E3;&#x2026;
-&#x9898;&#x76EE;&#x7B80;&#x8...
+                                又双叒叕水了一篇题解…
+题目简述
+对于两个序列 A，序列 B，长度一致；
+共 nnn 次操作，
+每次操作都会向这两个序列增加数字。
+在每次操作后，要求对每个序列中的每个数字配对，要让配对数之和的最大值最小。
+ Solution
+贪心。...
                             
                         </p>
                     </div>
@@ -643,7 +691,8 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                &#x5BF9;&#x4E8E;&#x57FA;&#x7840;&#x8BFB;&#x5165;&#x8BFB;&#x51FA;&#xFF0C;&#x6709;&#x57FA;&#x672C;&#x7684;&#x5FEB;&#x8B...
+                                对于基础读入读出，有基本的快读：
+12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;=&#x27;0&#x27;&amp;&amp;(a)&lt;=&#x...
                             
                         </p>
                     </div>
@@ -901,6 +950,7 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -909,6 +959,8 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -947,6 +999,7 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -975,7 +1028,6 @@ Solution&#x6700;&#x8FD1;&#x90FD;&#x5728;&#x5237;&#x6C34;&#x9898;&#xFF0C;&#...
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

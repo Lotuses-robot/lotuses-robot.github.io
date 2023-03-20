@@ -43,7 +43,6 @@
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
   
-  
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
@@ -72,6 +71,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -206,8 +206,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                arc026_4 &#x9898;&#x89E3;&#x7FFB;&#x8BD1;&#xFF1A;
-&#x6709; $n$ &#x4E2A;&#x6751;&#x5E84;&#xFF0C;**&#x7F16;&#x53F7;&#x4...
+                                 arc026_4 题解
+翻译：
+有 nnn 个村庄，编号从 000 到 n−1n-1n−1。这些村庄通过 mmm 条道路构成一个连通图。
+有一天，一场大规模的灾难摧毁了所有的道路，使得村庄之间的交通无法进行。你需要修复一些道路，将这...
                             
                         </p>
                     </div>
@@ -261,8 +263,9 @@
                         <p itemProp="description">
                             
                                 Problem Link
-&#x8FD9;&#x4E00;&#x9053;&#x4E8C;&#x5206;&#xFF0C;&#x975E;&#x5E38;&#x7684;&#x7ECF;&#x5178;&#xFF08;
-&#x9996...
+这一道二分，非常的经典（
+首先，可以在 O(l)O(l)O(l) 的时间内，计算出定值 nnn 对应切了多少道题目。
+那么就可以二分 nnn，每次 check 计算出的 k′k&#x27;k′ 与原 kkk ...
                             
                         </p>
                     </div>
@@ -519,6 +522,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -527,6 +531,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -565,6 +571,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -593,7 +600,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="&amp;#x597D;&amp;#x4E45;&amp;#x6CA1;&amp;#x6709;&amp;#x5199;&amp;#x9898;&amp;#x89E3;&amp;#x4E86;&amp;#xFF0C;&amp;#x793E;&amp;#x8D21;&amp;#x6389;&amp;#x7684;&amp;#x592A;&amp;#x4F4E;&amp;#x4E86;&amp;#xFF0C;&amp;#x5C31;&amp;#x6765;&amp;#x5199;&amp;#x5165;&amp;#x95E8;&amp;#x9898;&amp;#x89E3;&amp;#x4E86;">
+  <meta name="description" content="好久没有写题解了，社贡掉的太低了，就来写入门题解了  Solution 观察题面，大模拟。 模拟思路，是维护三个变量 f,s,tf,s,tf,s,t，分别代表一级标题序号，二级标题序号以及三级标题序号。 −1-1−1 代表到上一个父标题没有同级标题。 设当前的状态为标题的级别， 比如 123451 asdf2 ddd3 kk3.1 kkk3.1.1 jfkjd 这样，在前三个时三个状态都为 111">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P7964 Kaučuk 题解">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-p7964/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="&amp;#x597D;&amp;#x4E45;&amp;#x6CA1;&amp;#x6709;&amp;#x5199;&amp;#x9898;&amp;#x89E3;&amp;#x4E86;&amp;#xFF0C;&amp;#x793E;&amp;#x8D21;&amp;#x6389;&amp;#x7684;&amp;#x592A;&amp;#x4F4E;&amp;#x4E86;&amp;#xFF0C;&amp;#x5C31;&amp;#x6765;&amp;#x5199;&amp;#x5165;&amp;#x95E8;&amp;#x9898;&amp;#x89E3;&amp;#x4E86;">
+<meta property="og:description" content="好久没有写题解了，社贡掉的太低了，就来写入门题解了  Solution 观察题面，大模拟。 模拟思路，是维护三个变量 f,s,tf,s,tf,s,t，分别代表一级标题序号，二级标题序号以及三级标题序号。 −1-1−1 代表到上一个父标题没有同级标题。 设当前的状态为标题的级别， 比如 123451 asdf2 ddd3 kk3.1 kkk3.1.1 jfkjd 这样，在前三个时三个状态都为 111">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:56:39.000Z">
@@ -44,7 +44,6 @@
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
   
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
@@ -74,6 +73,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~3.95K
+                        1496
                     
                     字
                 </li>
@@ -197,31 +197,31 @@
             </div>
             
             
-                <div class="kratos-post-inner-toc">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.</span> <span class="toc-text">Solution</span></a></li></ol>
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">1.</span> <span class="toc-text"> Solution</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><p><del>&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x5199;&#x9898;&#x89E3;&#x4E86;&#xFF0C;&#x793E;&#x8D21;&#x6389;&#x7684;&#x592A;&#x4F4E;&#x4E86;&#xFF0C;&#x5C31;&#x6765;&#x5199;&#x5165;&#x95E8;&#x9898;&#x89E3;&#x4E86;</del></p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>&#x89C2;&#x5BDF;&#x9898;&#x9762;&#xFF0C;&#x5927;&#x6A21;&#x62DF;&#x3002;</p>
-<p>&#x6A21;&#x62DF;&#x601D;&#x8DEF;&#xFF0C;&#x662F;&#x7EF4;&#x62A4;&#x4E09;&#x4E2A;&#x53D8;&#x91CF; $f,s,t$&#xFF0C;&#x5206;&#x522B;&#x4EE3;&#x8868;<strong>&#x4E00;&#x7EA7;&#x6807;&#x9898;&#x5E8F;&#x53F7;</strong>&#xFF0C;<strong>&#x4E8C;&#x7EA7;&#x6807;&#x9898;&#x5E8F;&#x53F7;</strong>&#x4EE5;&#x53CA;<strong>&#x4E09;&#x7EA7;&#x6807;&#x9898;&#x5E8F;&#x53F7;</strong>&#x3002;</p>
-<p>$-1$ &#x4EE3;&#x8868;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7236;&#x6807;&#x9898;&#x6CA1;&#x6709;&#x540C;&#x7EA7;&#x6807;&#x9898;&#x3002;</p>
-<p>&#x8BBE;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x4E3A;&#x6807;&#x9898;&#x7684;&#x7EA7;&#x522B;&#xFF0C;</p>
-<p>&#x6BD4;&#x5982;</p>
+            <div itemprop="articleBody"><p><s>好久没有写题解了，社贡掉的太低了，就来写入门题解了</s></p>
+<h3 id="solution"><a class="markdownIt-Anchor" href="#solution"></a> Solution</h3>
+<p>观察题面，大模拟。</p>
+<p>模拟思路，是维护三个变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo separator="true">,</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">f,s,t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span></span></span></span>，分别代表<strong>一级标题序号</strong>，<strong>二级标题序号</strong>以及<strong>三级标题序号</strong>。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span> 代表到上一个父标题没有同级标题。</p>
+<p>设当前的状态为标题的级别，</p>
+<p>比如</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 asdf</span><br><span class="line">2 ddd</span><br><span class="line">3 kk</span><br><span class="line">3.1 kkk</span><br><span class="line">3.1.1 jfkjd</span><br></pre></td></tr></table></figure>
-
-<p>&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x524D;&#x4E09;&#x4E2A;&#x65F6;&#x4E09;&#x4E2A;&#x72B6;&#x6001;&#x90FD;&#x4E3A; $1$&#xFF0C;&#x7B2C;&#x56DB;&#x4E2A;&#x6807;&#x9898;&#x65F6;&#x72B6;&#x6001;&#x4E3A; $2$&#xFF0C;&#x7B2C;&#x4E94;&#x4E2A;&#x6807;&#x9898;&#x65F6;&#x72B6;&#x6001;&#x4E3A; $3$&#x3002;</p>
-<p>&#x5728;&#x63D2;&#x5165;&#x65B0;&#x6807;&#x9898;&#x65F6;&#xFF0C;</p>
-<p>&#x82E5;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x5BF9;&#x5E94;&#x7684;&#x53D8;&#x91CF;&#x4E3A; $-1$&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8981;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x6807;&#x9898;&#x3002;&#x8FD9;&#x65F6;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;&#x4E3A; $1$&#xFF0C;&#x8868;&#x793A;&#x5F53;&#x524D;&#x7EA7;&#x6807;&#x9898;&#x5E8F;&#x53F7;&#x4E3A; $1$&#x3002;</p>
-<p>&#x82E5;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x5BF9;&#x5E94;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x4E3A; $-1$&#xFF0C;&#x90A3;&#x4E48;&#x8BF4;&#x660E;&#x524D;&#x9762;&#x6709;&#x76F8;&#x540C;&#x7EA7;&#x522B;&#x7684;&#x6807;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x540E;&#x9762;&#x63A5;&#x4E00;&#x4E2A;&#x65B0;&#x5E8F;&#x53F7;&#x7684;&#x6807;&#x9898;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5C31;&#x81EA;&#x589E; $1$&#x3002;</p>
-<p>&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x4E09;&#x4E2A;&#x5E8F;&#x53F7;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>这样，在前三个时三个状态都为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，第四个标题时状态为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，第五个标题时状态为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>。</p>
+<p>在插入新标题时，</p>
+<p>若当前状态对应的变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>，那么就要插入新的标题。这时，让这个状态变量设置为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，表示当前级标题序号为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>若当前状态对应的变量不为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>，那么说明前面有相同级别的标题，需要在后面接一个新序号的标题，那么这个变量就自增 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>操作完成后，直接输出三个序号即可。</p>
+<p>举个例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">section zivotinje  1</span><br><span class="line">subsection macke   1.1</span><br><span class="line">subsection psi     1.2</span><br><span class="line">subsubsection mops 1.2.1</span><br><span class="line">section asdfasdf   2</span><br></pre></td></tr></table></figure>
-
-<p>&#x6267;&#x884C;&#x7B2C;&#x56DB;&#x6B65;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x539F;&#x6765;&#x57FA;&#x7840;&#x4E0A;&#x589E;&#x52A0;&#x4E00;&#x5C42;&#x6807;&#x9898;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8981;&#x4EE4; $t$ &#x7B49;&#x4E8E; $1$&#x3002;</p>
-<p>&#x6267;&#x884C;&#x7B2C;&#x4E94;&#x6B65;&#x65F6;&#xFF0C;&#x5C42;&#x6570;&#x6389;&#x56DE;&#x4E86;&#x4E00;&#x7EA7;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x4ED6;&#x4E4B;&#x4E0A;&#x5C31;&#x6CA1;&#x6709;&#x4E8C;&#x7EA7;&#x548C;&#x4E09;&#x7EA7;&#x6807;&#x9898;&#x4E86;&#xFF0C;&#x5C31;&#x8BA9; $s$ &#x548C; $t$ &#x90FD;&#x8BBE;&#x4E3A; $-1$&#xFF0C;$f$ &#x81EA;&#x589E; $1$&#x3002;</p>
+<p>执行第四步时，需要在原来基础上增加一层标题，那么就要令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>执行第五步时，层数掉回了一级，那么在他之上就没有二级和三级标题了，就让 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 都设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 自增 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
 <p>Code</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    string p,ss;</span><br><span class="line">    <span class="type">int</span> n,f=<span class="number">-1</span>,s=<span class="number">-1</span>,t=<span class="number">-1</span>;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {</span><br><span class="line">        cin&gt;&gt;p&gt;&gt;ss;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="string">&quot;section&quot;</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(f==<span class="number">-1</span>) f=<span class="number">1</span>; <span class="comment">//&#x524D;&#x9762;&#x6CA1;&#x6709;&#x540C;&#x7EA7;&#x6807;&#x9898;</span></span><br><span class="line">            <span class="keyword">else</span> f++;      <span class="comment">//&#x6709;&#x540C;&#x7EA7;&#x6807;&#x9898;</span></span><br><span class="line">            s=<span class="number">-1</span>,t=<span class="number">-1</span>;     <span class="comment">//&#x540E;&#x9762;&#x540C;&#x7406;</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %s\n&quot;</span>,f,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="string">&quot;subsection&quot;</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="number">-1</span>) s=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> s++;</span><br><span class="line">            t=<span class="number">-1</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d.%d %s\n&quot;</span>,f,s,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="string">&quot;subsubsection&quot;</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(t==<span class="number">-1</span>) t=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> t++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d.%d.%d %s\n&quot;</span>,f,s,t,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string p,ss;</span><br><span class="line">    <span class="type">int</span> n,f=<span class="number">-1</span>,s=<span class="number">-1</span>,t=<span class="number">-1</span>;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;p&gt;&gt;ss;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="string">&quot;section&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(f==<span class="number">-1</span>) f=<span class="number">1</span>; <span class="comment">//前面没有同级标题</span></span><br><span class="line">            <span class="keyword">else</span> f++;      <span class="comment">//有同级标题</span></span><br><span class="line">            s=<span class="number">-1</span>,t=<span class="number">-1</span>;     <span class="comment">//后面同理</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %s\n&quot;</span>,f,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="string">&quot;subsection&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="number">-1</span>) s=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> s++;</span><br><span class="line">            t=<span class="number">-1</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d.%d %s\n&quot;</span>,f,s,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="string">&quot;subsubsection&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(t==<span class="number">-1</span>) t=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> t++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d.%d.%d %s\n&quot;</span>,f,s,t,ss.<span class="built_in">c_str</span>());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -288,7 +288,11 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-p7964/";
             const title         = "「P7964 Kaučuk 题解」";
-            const excerpt       = `&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x5199;&#x9898;&#x89E3;&#x4E86;&#xFF0C;&#x793E;&#x8D21;&#x6389;&#x7684;&#x592A;&#x4F...`;
+            const excerpt       = `好久没有写题解了，社贡掉的太低了，就来写入门题解了
+ Solution
+观察题面，大模拟。
+模拟思路，是维护三个变量 f,s,tf,s,tf,s,t，分别代表一级标题序号，二级标题序号以及三级标题序号。
+−1-1−1 代表到上一个父标...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -408,7 +412,7 @@
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
@@ -416,7 +420,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-text"> Solution</span></a></li></ol>
     </div>
 </aside>
                 
@@ -580,6 +584,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -588,6 +593,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -626,6 +633,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -654,7 +662,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 

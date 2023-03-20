@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="Solution&amp;#x7ED3;&amp;#x8BBA;&amp;#xFF1A; $ans&#x3D;\lfloor s&#x2F;n^2\rfloor$ &amp;#x9898;&amp;#x76EE;&amp;#x4E2D;&amp;#xFF0C;&amp;#x9996;&amp;#x5148;&amp;#x770B;&amp;#x5230;&amp;#x4E86; &amp;#x7ED3;&amp;#x679C;&amp;#x552F;&amp;#x4E00;&amp;#x3002;&amp;#x6240;&amp;#x4EE5;&amp;#x8BC1;&amp;#x">
+  <meta name="description" content="Solution 结论： ans&#x3D;⌊s&#x2F;n2⌋ans&#x3D;\lfloor s&#x2F;n^2\rfloorans&#x3D;⌊s&#x2F;n2⌋ 题目中，首先看到了 结果唯一。所以证明的起点就在这里。 因为 [0,n)[0,n)[0,n) 范围内的数至多有 (n+1)(n+1)(n+1) 个，最小总值为 000，最大总值为 n2−1n^2-1n2−1，所以数列中的 n2n^2n2 不能被 [0,n)[0,n)[0,n) 范围">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1646A Solution">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-cf1646a/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="Solution&amp;#x7ED3;&amp;#x8BBA;&amp;#xFF1A; $ans&#x3D;\lfloor s&#x2F;n^2\rfloor$ &amp;#x9898;&amp;#x76EE;&amp;#x4E2D;&amp;#xFF0C;&amp;#x9996;&amp;#x5148;&amp;#x770B;&amp;#x5230;&amp;#x4E86; &amp;#x7ED3;&amp;#x679C;&amp;#x552F;&amp;#x4E00;&amp;#x3002;&amp;#x6240;&amp;#x4EE5;&amp;#x8BC1;&amp;#x">
+<meta property="og:description" content="Solution 结论： ans&#x3D;⌊s&#x2F;n2⌋ans&#x3D;\lfloor s&#x2F;n^2\rfloorans&#x3D;⌊s&#x2F;n2⌋ 题目中，首先看到了 结果唯一。所以证明的起点就在这里。 因为 [0,n)[0,n)[0,n) 范围内的数至多有 (n+1)(n+1)(n+1) 个，最小总值为 000，最大总值为 n2−1n^2-1n2−1，所以数列中的 n2n^2n2 不能被 [0,n)[0,n)[0,n) 范围">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:54:14.000Z">
@@ -44,7 +44,6 @@
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
-  
   
   <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
   <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
@@ -74,6 +73,7 @@
     
   </style>
   
+  <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
@@ -182,7 +182,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        942
+                        475
                     
                     字
                 </li>
@@ -197,15 +197,17 @@
             </div>
             
             
-                <div class="kratos-post-inner-toc">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.</span> <span class="toc-text">Solution</span></a></li></ol>
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">1.</span> <span class="toc-text"> Solution</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>&#x7ED3;&#x8BBA;&#xFF1A; $ans=\lfloor s/n^2\rfloor$</p>
-<p>&#x9898;&#x76EE;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x770B;&#x5230;&#x4E86; <code>&#x7ED3;&#x679C;&#x552F;&#x4E00;</code>&#x3002;&#x6240;&#x4EE5;&#x8BC1;&#x660E;&#x7684;&#x8D77;&#x70B9;&#x5C31;&#x5728;&#x8FD9;&#x91CC;&#x3002;</p>
-<p>&#x56E0;&#x4E3A; $[0,n)$ &#x8303;&#x56F4;&#x5185;&#x7684;&#x6570;&#x81F3;&#x591A;&#x6709; $(n+1)$ &#x4E2A;&#xFF0C;&#x6700;&#x5C0F;&#x603B;&#x503C;&#x4E3A; $0$&#xFF0C;&#x6700;&#x5927;&#x603B;&#x503C;&#x4E3A; $n^2-1$&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x5217;&#x4E2D;&#x7684; $n^2$ &#x4E0D;&#x80FD;&#x88AB; $[0,n)$ &#x8303;&#x56F4;&#x5185;&#x7684;&#x6570;&#x4EE3;&#x66FF;&#xFF0C;&#x56E0;&#x6B64;&#x7B54;&#x6848;&#x552F;&#x4E00;&#x3002;</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> n,s;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;s;</span><br><span class="line">        cout&lt;&lt;(s/(n*n))&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+            <div itemprop="articleBody"><h3 id="solution"><a class="markdownIt-Anchor" href="#solution"></a> Solution</h3>
+<p>结论： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi><mo>=</mo><mo stretchy="false">⌊</mo><mi>s</mi><mi mathvariant="normal">/</mi><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">⌋</mo></mrow><annotation encoding="application/x-tex">ans=\lfloor s/n^2\rfloor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">⌊</span><span class="mord mathdefault">s</span><span class="mord">/</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">⌋</span></span></span></span></p>
+<p>题目中，首先看到了 <code>结果唯一</code>。所以证明的起点就在这里。</p>
+<p>因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0,n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 范围内的数至多有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 个，最小总值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，最大总值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n^2-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，所以数列中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 不能被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0,n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 范围内的数代替，因此答案唯一。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> n,s;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;s;</span><br><span class="line">        cout&lt;&lt;(s/(n*n))&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </div>
         </div>
         
@@ -273,8 +275,10 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://www.lotuses.net/2022/07/29/solution-cf1646a/";
             const title         = "「CF1646A Solution」";
-            const excerpt       = `Solution&#x7ED3;&#x8BBA;&#xFF1A; $ans=\lfloor s/n^2\rfloor$
-&#x9898;&#x76EE;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x770B;&...`;
+            const excerpt       = ` Solution
+结论： ans=⌊s/n2⌋ans=\lfloor s/n^2\rfloorans=⌊s/n2⌋
+题目中，首先看到了 结果唯一。所以证明的起点就在这里。
+因为 [0,n)[0,n)[0,n) 范围内的数至多有 (n...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -394,7 +398,7 @@
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
@@ -402,7 +406,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-text"> Solution</span></a></li></ol>
     </div>
 </aside>
                 
@@ -566,6 +570,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
                         
@@ -574,6 +579,8 @@
                         
                         
                         <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
@@ -612,6 +619,7 @@
                     </div>
                 
                 
+                
             </div>
             <div class="box gotop-box">
                 <span class="fa fa-chevron-up"></span>
@@ -640,7 +648,6 @@
 
     <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
 
