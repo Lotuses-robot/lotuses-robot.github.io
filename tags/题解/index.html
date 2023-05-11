@@ -71,7 +71,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -205,10 +317,11 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 arc026_4 题解
+                                arc026_4 题解
 翻译：
-有 nnn 个村庄，编号从 000 到 n−1n-1n−1。这些村庄通过 mmm 条道路构成一个连通图。
-有一天，一场大规模的灾难摧毁了所有的道路，使得村庄之间的交通无法进行。你需要修复一些道路，将这...
+有  个村庄，编号从  到 。这些村庄通过  条道路构成一个连通图。
+有一天，一场大规模的灾难摧毁了所有的道路，使得村庄之间的交通无法进行。你需要修复一些道路，将这几个村庄连接起来。
+您首先估计了修理每...
                             
                         </p>
                     </div>
@@ -263,8 +376,9 @@
                             
                                 Problem Link
 这一道二分，非常的经典（
-首先，可以在 O(l)O(l)O(l) 的时间内，计算出定值 nnn 对应切了多少道题目。
-那么就可以二分 nnn，每次 check 计算出的 k′k&#x27;k′ 与原 kkk ...
+首先，可以在  的时间内，计算出定值  对应切了多少道题目。
+那么就可以二分 ，每次 check 计算出的  与原  的大小关系，并由此二分。
+上下界之间只有一个等号的不同，是一样的...
                             
                         </p>
                     </div>

@@ -73,7 +73,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -181,7 +293,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1146
+                        1026
                     
                     字
                 </li>
@@ -204,7 +316,7 @@
 <p>那么，先向左还是先向右呢？</p>
 <p>观察发现，先向左，那么中途浪费的时间就是左边节点数的两倍；先向右是右边节点数的两倍。<strong>自然是优先选择节点数少的了！</strong></p>
 <p>那么，分类讨论，并整理模拟思路，就打出这样的代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>((n-k)&gt;=k)  <span class="comment">// 分类讨论</span></span><br><span class="line">    &#123;             <span class="comment">// 模拟</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=k<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;PRINT %c\n&quot;</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;RIGHT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k+<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\n&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;LEFT\nPRINT %c\n&quot;</span>,s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>((n-k)&gt;=k)  <span class="comment">// 分类讨论</span></span><br><span class="line">    {             <span class="comment">// 模拟</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"PRINT %c\n"</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"LEFT\nPRINT %c\n"</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=k<span class="number">-1</span>;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"RIGHT\n"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"RIGHT\nPRINT %c\n"</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"PRINT %c\n"</span>,s[k]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"RIGHT\nPRINT %c\n"</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k+<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"LEFT\n"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"LEFT\nPRINT %c\n"</span>,s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">

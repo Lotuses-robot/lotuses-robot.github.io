@@ -71,7 +71,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -187,10 +299,14 @@
                         <p itemProp="description">
                             
                                 观察原序列，
-(x1−x2)+(x2−x3)+⋯+(xn−1−xn)(x_1-x_2)+(x_2-x_3)+\cdots+(x_{n-1}-x_n)
-(x1​−x2​)+(x2​−x3​)+⋯+(xn−1​−xn​)
+
 可以化简得到
-x...
+
+所以，抵消中间的项，可以得到最终式子为
+
+要让这个最大，直接让  即可。
+又要求按照字典序排列，那么排一遍序，最后交换首尾两个数字，就 ok 了。
+12345678910111213#include&l...
                             
                         </p>
                     </div>
@@ -293,7 +409,7 @@ x...
                         <p itemProp="description">
                             
                                 如题目名字，这是一道简单的题。观察式子，
-{∑ki≥0,(∑i=1nki)=k[k!∏i=1n(ki!)⋅∏i=1n(i!)ki]} mod p\Big\{\sum_{k_i\geq 0,(\sum_{i=1}^n k_i)=k} \...
+Missing or unrecognized delimiter for \Big  \Big{\sum_{k_i\geq 0,(\sum_{i=1}^n k_i)=k} \Big[\fra...
                             
                         </p>
                     </div>
@@ -344,7 +460,7 @@ x...
                         <p itemProp="description">
                             
                                 洛谷博客表格较为鬼畜，此文章将同步发表在 CSDN 上。
- 字母键及主键盘数字键
+字母键及主键盘数字键
 
 
 
@@ -363,12 +479,13 @@ A ~ Z
 
 
 
- 小键盘数字及符号键
+小键盘数字及符号键
 
 
 
 键名称
-键代...
+键代码
+...
                             
                         </p>
                     </div>
@@ -419,8 +536,8 @@ A ~ Z
                         <p itemProp="description">
                             
                                 整理封装自 ryanright 的博客
- 高精度
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505...
+高精度
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051...
                             
                         </p>
                     </div>
@@ -470,11 +587,11 @@ A ~ Z
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 题意简化
+                                题意简化
 六个字母，任意一字母大写若出现在小写的前面，输出 NO，否则输出 YES。
- Solution
+Solution
 字典暴力模拟，这样能够减少代码量。使用 toupper() 使代码更整洁。
-1234567891011121314151617...
+123456789101112131415161718...
                             
                         </p>
                     </div>
@@ -525,11 +642,11 @@ A ~ Z
                         <p itemProp="description">
                             
                                 翻译已交，直接上正解。
- Solution
+Solution
 显然，直接 dfs 生成排列-测试会超时。
 想到可以在 dfs 过程中进行测试（判断下一个放置的数字是否满足反斐波那契序列的条件）。
 于是代码就长这样：
-123456789101112131...
+1234567891011121314...
                             
                         </p>
                     </div>
@@ -579,13 +696,13 @@ A ~ Z
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 Solution
+                                Solution
 关于某一条线段是否是安全的（以下不考虑端点），有两个结论。
 
-不是平行于 y=0y=0y=0 的线段必定是安全的；
-若这条线段中较低的点（即 yyy 坐标较小的点）下方没有其他边，那么这条线段必定是安全的。
+不是平行于  的线段必定是安全的；
+若这条线段中较低的点（即  坐标较小的点）下方没有其他边，那么这条线段必定是安全的。
 
-第二...
+第二条结论显而易见，可以直接从...
                             
                         </p>
                     </div>
@@ -635,11 +752,18 @@ A ~ Z
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 A. Square Counting
-给你一个序列 a1,⋯ ,an+1a_1,\cdots,a_{n+1}a1​,⋯,an+1​，每一个元素满足两个条件：
+                                A. Square Counting
+给你一个序列 ，每一个元素满足两个条件：
 
-0≤ai&lt;n0\le a_i&lt;n0≤ai​&lt;n
-ai=...
+
+
+
+已知  和序列之和 ，求对于任意 ， 的个数。
+ 组数据。
+可以证明结果唯一。
+结论： 
+题目中，首先看到了 结果唯一。所以证明的起点就在这里。
+...
                             
                         </p>
                     </div>
@@ -689,10 +813,11 @@ ai=...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 A. Game
-有 nnn 个横向排列的位置，序号为 1∼n1\sim n1∼n，每个位置可能有水，也可能是空的。
+                                A. Game
+有  个横向排列的位置，序号为 ，每个位置可能有水，也可能是空的。
 向相邻格子移动是不需要花费的。
-在每组数据中，你只能跳一次。你可以跳任意格远。代价为 ∣dj−di∣|d_j-d_i...
+在每组数据中，你只能跳一次。你可以跳任意格远。代价为 （ 为终点  为起点）
+你不能跳到含水格子里。保证起点  和终点...
                             
                         </p>
                     </div>

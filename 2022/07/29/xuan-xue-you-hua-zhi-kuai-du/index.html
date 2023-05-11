@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="对于基础读入读出，有基本的快读： 12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;&#x3D;&amp;#x27;0&amp;#x27;&amp;&amp;(a)&lt;&#x3D;&amp;#x27;9&amp;#x27;)#define gc getchar()#define pc(a) putchar(a)#define writeln(a) write(a,&amp;">
+  <meta name="description" content="对于基础读入读出，有基本的快读： 12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;&#x3D;&#39;0&#39;&amp;&amp;(a)&lt;&#x3D;&#39;9&#39;)#define gc getchar()#define pc(a) putchar(a)#define writeln(a) write(a,&#39;\n&#39;)template&lt;type">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玄学优化之——快读">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/xuan-xue-you-hua-zhi-kuai-du/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="对于基础读入读出，有基本的快读： 12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;&#x3D;&amp;#x27;0&amp;#x27;&amp;&amp;(a)&lt;&#x3D;&amp;#x27;9&amp;#x27;)#define gc getchar()#define pc(a) putchar(a)#define writeln(a) write(a,&amp;">
+<meta property="og:description" content="对于基础读入读出，有基本的快读： 12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;&#x3D;&#39;0&#39;&amp;&amp;(a)&lt;&#x3D;&#39;9&#39;)#define gc getchar()#define pc(a) putchar(a)#define writeln(a) write(a,&#39;\n&#39;)template&lt;type">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:57:09.000Z">
@@ -73,7 +73,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -181,7 +293,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.13K
+                        ~1.80K
                     
                     字
                 </li>
@@ -199,11 +311,11 @@
             
             <hr />
             <div itemprop="articleBody"><p>对于基础读入读出，有基本的快读：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> isdi(a) ((a)&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;(a)&lt;=<span class="string">&#x27;9&#x27;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gc getchar()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pc(a) putchar(a)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> writeln(a) write(a,<span class="string">&#x27;\n&#x27;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(T&amp;r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	r=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">&#x27;z&#x27;</span>;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">	<span class="keyword">if</span>(last==<span class="string">&#x27;-&#x27;</span>) r=-r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> buf[<span class="number">100</span>],len_;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">write</span><span class="params">(T r,<span class="type">char</span> endc=<span class="string">&#x27; &#x27;</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(r&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>),r=-r;</span><br><span class="line">	len_=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span> buf[len_++]=r%<span class="number">10</span>; <span class="keyword">while</span>(r/=<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">	<span class="built_in">pc</span>(endc);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> isdi(a) ((a)&gt;=<span class="string">'0'</span>&amp;&amp;(a)&lt;=<span class="string">'9'</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gc getchar()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pc(a) putchar(a)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> writeln(a) write(a,<span class="string">'\n'</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(T&amp;r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	r=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">'z'</span>;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">	<span class="keyword">if</span>(last==<span class="string">'-'</span>) r=-r;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> buf[<span class="number">100</span>],len_;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">write</span><span class="params">(T r,<span class="type">char</span> endc=<span class="string">' '</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">if</span>(r&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">'-'</span>),r=-r;</span><br><span class="line">	len_=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span> buf[len_++]=r%<span class="number">10</span>; <span class="keyword">while</span>(r/=<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">'0'</span>);</span><br><span class="line">	<span class="built_in">pc</span>(endc);</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>根据这个基本快读，结合不定参数，可以得到加强版 <code>reads</code> 和 <code>writes</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> isdi(a) ((a)&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;(a)&lt;=<span class="string">&#x27;9&#x27;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gc getchar()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pc(a) putchar(a)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> writeln(a) write(a,<span class="string">&#x27;\n&#x27;</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(T&amp;r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	r=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">&#x27;z&#x27;</span>;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">	<span class="keyword">if</span>(last==<span class="string">&#x27;-&#x27;</span>) r=-r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reads</span><span class="params">(T&amp; ...rr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> r:&#123;&amp;rr...&#125;)</span><br><span class="line">	&#123;</span><br><span class="line">		(*r)=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">&#x27;z&#x27;</span>;</span><br><span class="line">		<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) (*r)=((*r)&lt;&lt;<span class="number">1</span>)+((*r)&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">		<span class="keyword">if</span>(last==<span class="string">&#x27;-&#x27;</span>) (*r)=-(*r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> buf[<span class="number">100</span>],len_;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">write</span><span class="params">(T r,<span class="type">char</span> endc=<span class="string">&#x27; &#x27;</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(r&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>),r=-r;</span><br><span class="line">	len_=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span> buf[len_++]=r%<span class="number">10</span>; <span class="keyword">while</span>(r/=<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">	<span class="built_in">pc</span>(endc);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">writes</span><span class="params">(T ...ww)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">char</span> endc=<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> w:&#123;ww...&#125;)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(w&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>),w=-w;</span><br><span class="line">		len_=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">do</span> buf[len_++]=w%<span class="number">10</span>; <span class="keyword">while</span>(w/=<span class="number">10</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">		<span class="built_in">pc</span>(endc);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pc</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> isdi(a) ((a)&gt;=<span class="string">'0'</span>&amp;&amp;(a)&lt;=<span class="string">'9'</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gc getchar()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pc(a) putchar(a)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> writeln(a) write(a,<span class="string">'\n'</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(T&amp;r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	r=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">'z'</span>;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">	<span class="keyword">if</span>(last==<span class="string">'-'</span>) r=-r;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reads</span><span class="params">(T&amp; ...rr)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> r:{&amp;rr...})</span><br><span class="line">	{</span><br><span class="line">		(*r)=<span class="number">0</span>;<span class="type">char</span> ch=gc,last=<span class="string">'z'</span>;</span><br><span class="line">		<span class="keyword">while</span>(!<span class="built_in">isdi</span>(ch)) last=ch,ch=gc;</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">isdi</span>(ch)) (*r)=((*r)&lt;&lt;<span class="number">1</span>)+((*r)&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>),ch=gc;</span><br><span class="line">		<span class="keyword">if</span>(last==<span class="string">'-'</span>) (*r)=-(*r);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> buf[<span class="number">100</span>],len_;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">write</span><span class="params">(T r,<span class="type">char</span> endc=<span class="string">' '</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">if</span>(r&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">'-'</span>),r=-r;</span><br><span class="line">	len_=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span> buf[len_++]=r%<span class="number">10</span>; <span class="keyword">while</span>(r/=<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">'0'</span>);</span><br><span class="line">	<span class="built_in">pc</span>(endc);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">writes</span><span class="params">(T ...ww)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">char</span> endc=<span class="string">' '</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> w:{ww...})</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(w&lt;<span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">'-'</span>),w=-w;</span><br><span class="line">		len_=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">do</span> buf[len_++]=w%<span class="number">10</span>; <span class="keyword">while</span>(w/=<span class="number">10</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=len_<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">pc</span>(buf[i]+<span class="string">'0'</span>);</span><br><span class="line">		<span class="built_in">pc</span>(endc);</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">pc</span>(<span class="string">'\n'</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p><code>reads</code> 支持多参数；</p>
-<p><code>writes</code> 支持多参数，且输出格式为 <code>&quot;%d %d ... %d \n&quot;</code></p>
+<p><code>writes</code> 支持多参数，且输出格式为 <code>"%d %d ... %d \n"</code></p>
 <p><strong>注：</strong> 请注意格式，以及不要用错了。</p>
 </div>
         </div>
@@ -273,7 +385,7 @@
             const hostUrl       = "https://www.lotuses.net/2022/07/29/xuan-xue-you-hua-zhi-kuai-du/";
             const title         = "「玄学优化之——快读」";
             const excerpt       = `对于基础读入读出，有基本的快读：
-12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;=&#x27;0&#x27;&amp;&amp;(a)&lt;=&#x...`;
+12345678910111213141516171819202122232425#define isdi(a) ((a)&gt;='0'&amp;&amp;(a)&lt;='9')#define g...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;

@@ -71,7 +71,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -186,8 +298,23 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 「DTOI-5」#1f1e33
-f(n)=∑i=1n∑j=1n∑k=1n[i+j+k=n]lcm⁡(i,gcd⁡(j,k))f(n) = \displaystyle\sum_{i = 1}^n \sum_{j = 1}^n \sum...
+                                「DTOI-5」#1f1e33
+
+令 ，
+
+着手解决 。
+
+考虑整理  后面这一坨东西：
+
+
+这坨可以 ，然后考虑后面的东西。
+
+设
+
+则上式化为
+
+这一部分可以整除分块  做？ 乘上前面的 ？？
+
                             
                         </p>
                     </div>
@@ -240,10 +367,28 @@ f(n)=∑i=1n∑j=1n∑k=1n[i+j+k=n]lcm⁡(i,gcd⁡(j,k))f(n) = \displaystyle\sum
                                 
 莫比乌斯反演（中心定理？）
 
-f(n)=∑d∣ng(d)f(n) = \sum_{d|n} g(d)
-f(n)=d∣n∑​g(d)
+
 则
-g(n)=∑d∣nμ(d)⋅f(nd)g(n)=∑n∣dμ(dn)⋅f(d)g(n) = \su...
+
+
+
+GCD 1
+
+
+
+GCD 2
+
+
+
+GCD 3
+
+
+
+GCD 4
+
+
+
+
                             
                         </p>
                     </div>
@@ -293,7 +438,8 @@ g(n)=∑d∣nμ(d)⋅f(nd)g(n)=∑n∣dμ(dn)⋅f(d)g(n) = \su...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                实验室中有一个由 nnn 个实验腔连接而成的环形轨道，其中第 iii 个实验腔顺时针连向第 i+1i+1i+1 个实验腔（特别的，第 nnn 个实验腔连向第 111 个实验腔）。同时还有一个标号为 n+1n+1n+1 的新建实验腔要接...
+                                实验室中有一个由  个实验腔连接而成的环形轨道，其中第  个实验腔顺时针连向第  个实验腔（特别的，第  个实验腔连向第  个实验腔）。同时还有一个标号为  的新建实验腔要接入这个环形轨道。它可以接在任意两个原本相连的实验腔之间。
+第...
                             
                         </p>
                     </div>
@@ -346,8 +492,11 @@ g(n)=∑d∣nμ(d)⋅f(nd)g(n)=∑n∣dμ(dn)⋅f(d)g(n) = \su...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                y=2(x+54)2+318y=2(x+\frac{5}{4})^2+\frac{31}{8}y=2(x+45​)2+831​
-y=−12(x+5)2+392y=-\frac{1}{2}(x+5)^2+\frac{39}{2}y=−2...
+                                
+
+
+
+
                             
                         </p>
                     </div>
@@ -397,10 +546,11 @@ y=−12(x+5)2+392y=-\frac{1}{2}(x+5)^2+\frac{39}{2}y=−2...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 arc026_4 题解
+                                arc026_4 题解
 翻译：
-有 nnn 个村庄，编号从 000 到 n−1n-1n−1。这些村庄通过 mmm 条道路构成一个连通图。
-有一天，一场大规模的灾难摧毁了所有的道路，使得村庄之间的交通无法进行。你需要修复一些道路，将这...
+有  个村庄，编号从  到 。这些村庄通过  条道路构成一个连通图。
+有一天，一场大规模的灾难摧毁了所有的道路，使得村庄之间的交通无法进行。你需要修复一些道路，将这几个村庄连接起来。
+您首先估计了修理每...
                             
                         </p>
                     </div>
@@ -512,8 +662,8 @@ T1：STL sor...
                                 例题：[NOIP2004 提高组] 虫食算
 在这道题中，我们要解一个多元一次方程组，即对于
 123 BADC+CBDA DCCC
-这样的数式计算，要找到所有字母对应的数值，使对于这样的 nnn 进制加法成立。每个字母对应一个数字。
-很...
+这样的数式计算，要找到所有字母对应的数值，使对于这样的  进制加法成立。每个字母对应一个数字。
+很容易可...
                             
                         </p>
                     </div>
@@ -566,14 +716,14 @@ T1：STL sor...
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 总结
+                                总结
 2022/10/20~2022/10/23
 书接上回，
 Codeforces 阳间比赛只打了一场。
 比赛的情况还不错。AC A~D
 在此总结一下做法。
- Codeforces Round 829 (div.2)
- A. Tec...
+Codeforces Round 829 (div.2)
+A. Techni...
                             
                         </p>
                     </div>
@@ -626,7 +776,7 @@ Codeforces 阳间比赛只打了一场。
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 总结
+                                总结
 2022/10/17~2022/10/20
 书接上回，
 ARC 掉大分：
@@ -635,7 +785,7 @@ T1 晚切，T2 思路假掉，心态崩掉——/dk
 做题重心：
 
 Luogu 部分特殊算法题 + sf 的洛谷题单；
-思考一点 Codeforces Pr...
+思考一点 Codeforces Pro...
                             
                         </p>
                     </div>
@@ -690,8 +840,9 @@ Luogu 部分特殊算法题 + sf 的洛谷题单；
                             
                                 Problem Link
 这一道二分，非常的经典（
-首先，可以在 O(l)O(l)O(l) 的时间内，计算出定值 nnn 对应切了多少道题目。
-那么就可以二分 nnn，每次 check 计算出的 k′k&#x27;k′ 与原 kkk ...
+首先，可以在  的时间内，计算出定值  对应切了多少道题目。
+那么就可以二分 ，每次 check 计算出的  与原  的大小关系，并由此二分。
+上下界之间只有一个等号的不同，是一样的...
                             
                         </p>
                     </div>

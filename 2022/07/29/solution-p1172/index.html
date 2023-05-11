@@ -16,12 +16,12 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="数据点望 Luogu 能完善下 好，讲解正式开始。 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。 我们要模拟啥呢？  1、首先，对于每一个牛，我们都要检查他能不能离开。 对于每一个牛，它上方格子或右方格子中，一定要有一条完全没有其他牛。 就说上文的样例。444 号上方有 111 号，向上走行不通。同时有房还有 666 号，向右走，也行不通。所">
+  <meta name="description" content="数据点望 Luogu 能完善下 好，讲解正式开始。 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。 我们要模拟啥呢？ 1、首先，对于每一个牛，我们都要检查他能不能离开。 对于每一个牛，它上方格子或右方格子中，一定要有一条完全没有其他牛。 就说上文的样例。 号上方有  号，向上走行不通。同时有房还有  号，向右走，也行不通。所以这头牛就不能安全逃">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1172 安全逃离 题解">
 <meta property="og:url" content="https://www.lotuses.net/2022/07/29/solution-p1172/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
-<meta property="og:description" content="数据点望 Luogu 能完善下 好，讲解正式开始。 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。 我们要模拟啥呢？  1、首先，对于每一个牛，我们都要检查他能不能离开。 对于每一个牛，它上方格子或右方格子中，一定要有一条完全没有其他牛。 就说上文的样例。444 号上方有 111 号，向上走行不通。同时有房还有 666 号，向右走，也行不通。所">
+<meta property="og:description" content="数据点望 Luogu 能完善下 好，讲解正式开始。 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。 我们要模拟啥呢？ 1、首先，对于每一个牛，我们都要检查他能不能离开。 对于每一个牛，它上方格子或右方格子中，一定要有一条完全没有其他牛。 就说上文的样例。 号上方有  号，向上走行不通。同时有房还有  号，向右走，也行不通。所以这头牛就不能安全逃">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
 <meta property="article:published_time" content="2022-07-29T07:58:21.000Z">
@@ -73,7 +73,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -181,7 +293,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.62K
+                        1476
                     
                     字
                 </li>
@@ -198,7 +310,7 @@
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%A6%96%E5%85%88%E5%AF%B9%E4%BA%8E%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%E6%88%91%E4%BB%AC%E9%83%BD%E8%A6%81%E6%A3%80%E6%9F%A5%E4%BB%96%E8%83%BD%E4%B8%8D%E8%83%BD%E7%A6%BB%E5%BC%80"><span class="toc-number">1.</span> <span class="toc-text"> 1、首先，对于每一个牛，我们都要检查他能不能离开。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%B6%E6%AC%A1%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84%E5%9B%BE%E6%88%91%E4%BB%AC%E8%A6%81%E5%B0%9D%E8%AF%95%E5%8E%BB%E6%8E%89%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%E6%9D%A5%E5%B0%9D%E8%AF%95%E8%83%BD%E5%90%A6%E4%BD%BF%E5%9B%BE%E5%8F%98%E5%BE%97%E5%AE%89%E5%85%A8"><span class="toc-number">2.</span> <span class="toc-text"> 2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E9%A6%96%E5%85%88%EF%BC%8C%E5%AF%B9%E4%BA%8E%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%EF%BC%8C%E6%88%91%E4%BB%AC%E9%83%BD%E8%A6%81%E6%A3%80%E6%9F%A5%E4%BB%96%E8%83%BD%E4%B8%8D%E8%83%BD%E7%A6%BB%E5%BC%80%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">1、首先，对于每一个牛，我们都要检查他能不能离开。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%85%B6%E6%AC%A1%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84%E5%9B%BE%EF%BC%8C%E6%88%91%E4%BB%AC%E8%A6%81%E5%B0%9D%E8%AF%95%E5%8E%BB%E6%8E%89%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%EF%BC%8C%E6%9D%A5%E5%B0%9D%E8%AF%95%E8%83%BD%E5%90%A6%E4%BD%BF%E5%9B%BE%E5%8F%98%E5%BE%97%E5%AE%89%E5%85%A8%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</span></a></li></ol>
                 </div>
             
             <hr />
@@ -206,17 +318,17 @@
 <p>好，讲解正式开始。</p>
 <p>拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。</p>
 <p>我们要模拟啥呢？</p>
-<h4 id="1-首先对于每一个牛我们都要检查他能不能离开"><a class="markdownIt-Anchor" href="#1-首先对于每一个牛我们都要检查他能不能离开"></a> 1、首先，对于每一个牛，我们都要检查他能不能离开。</h4>
+<h4 id="1、首先，对于每一个牛，我们都要检查他能不能离开。">1、首先，对于每一个牛，我们都要检查他能不能离开。</h4>
 <p>对于每一个牛，它上方格子或右方格子中，一定要有一条完全没有其他牛。</p>
-<p>就说上文的样例。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 号上方有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 号，向上走行不通。同时有房还有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 号，向右走，也行不通。所以这头牛就不能安全逃出。</p>
-<p>同样我们可以看出，要让整个图安全，只要去掉 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 的任意一个，就可以解决纠纷了。</p>
-<h4 id="2-其次如果不是安全的图我们要尝试去掉每一个牛来尝试能否使图变得安全"><a class="markdownIt-Anchor" href="#2-其次如果不是安全的图我们要尝试去掉每一个牛来尝试能否使图变得安全"></a> 2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</h4>
+<p>就说上文的样例。<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 500 677"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g></g></g></svg></mjx-container> 号上方有 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.507ex" role="img" focusable="false" viewBox="0 -666 500 666"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container> 号，向上走行不通。同时有房还有 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 500 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path></g></g></g></svg></mjx-container> 号，向右走，也行不通。所以这头牛就不能安全逃出。</p>
+<p>同样我们可以看出，要让整个图安全，只要去掉 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.507ex" role="img" focusable="false" viewBox="0 -666 500 666"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 500 677"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g></g></g></svg></mjx-container>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 500 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path></g></g></g></svg></mjx-container> 的任意一个，就可以解决纠纷了。</p>
+<h4 id="2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。">2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</h4>
 <p>这里，我<s>似乎</s>想到一个优化的方法，就是将发生冲突的牛记录下来，在去牛的时候只检查这些就够了。</p>
 <p><s>可惜</s>数据太小，也没太大用，这里只起抛砖引玉的效果。</p>
 <p>用上面这两条足以通过此题。</p>
 <p>上代码！</p>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> mp[<span class="number">51</span>][<span class="number">51</span>];</span><br><span class="line"><span class="type">int</span> cowx[<span class="number">101</span>],</span><br><span class="line">	cowy[<span class="number">101</span>];</span><br><span class="line"><span class="type">int</span> r,c,n,x,y;</span><br><span class="line"><span class="type">char</span> t[<span class="number">201</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>  <span class="comment">//检查每一个牛</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">bool</span> flag1=<span class="number">1</span>,flag2=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=x<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--) <span class="keyword">if</span>(mp[i][y]) &#123;flag1=<span class="literal">false</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=y+<span class="number">1</span>;i&lt;=c;i++) <span class="keyword">if</span>(mp[x][i]) &#123;flag2=<span class="literal">false</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">	<span class="keyword">return</span> flag1||flag2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">checkALL</span><span class="params">()</span>  <span class="comment">//将检查所有的牛合并到一个函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">bool</span> ok=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> x=cowx[i],y=cowy[i];</span><br><span class="line">		<span class="keyword">if</span>(mp[x][y]&amp;&amp;<span class="built_in">check</span>(x,y)==<span class="literal">false</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ok=<span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ok;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;r&gt;&gt;c&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;cowx[i]&gt;&gt;cowy[i];<span class="built_in">gets</span>(t);  <span class="comment">//去除其他字符</span></span><br><span class="line">		mp[cowx[i]][cowy[i]]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">checkALL</span>()) cout&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			mp[cowx[i]][cowy[i]]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">checkALL</span>())</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//要一直检查，这里就没有 break</span></span><br><span class="line">				<span class="comment">//同时不要在前面输出1</span></span><br><span class="line">            </span><br><span class="line">				<span class="keyword">if</span>(!mp[<span class="number">0</span>][<span class="number">0</span>]) mp[<span class="number">0</span>][<span class="number">0</span>]=<span class="literal">true</span>;</span><br><span class="line">				cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">			&#125;</span><br><span class="line">			mp[cowx[i]][cowy[i]]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!mp[<span class="number">0</span>][<span class="number">0</span>]) cout&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewBox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> mp[<span class="number">51</span>][<span class="number">51</span>];</span><br><span class="line"><span class="type">int</span> cowx[<span class="number">101</span>],</span><br><span class="line">	cowy[<span class="number">101</span>];</span><br><span class="line"><span class="type">int</span> r,c,n,x,y;</span><br><span class="line"><span class="type">char</span> t[<span class="number">201</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>  <span class="comment">//检查每一个牛</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">bool</span> flag1=<span class="number">1</span>,flag2=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=x<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--) <span class="keyword">if</span>(mp[i][y]) {flag1=<span class="literal">false</span>;<span class="keyword">break</span>;}</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=y+<span class="number">1</span>;i&lt;=c;i++) <span class="keyword">if</span>(mp[x][i]) {flag2=<span class="literal">false</span>;<span class="keyword">break</span>;}</span><br><span class="line">	<span class="keyword">return</span> flag1||flag2;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">checkALL</span><span class="params">()</span>  <span class="comment">//将检查所有的牛合并到一个函数</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="type">bool</span> ok=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="type">int</span> x=cowx[i],y=cowy[i];</span><br><span class="line">		<span class="keyword">if</span>(mp[x][y]&amp;&amp;<span class="built_in">check</span>(x,y)==<span class="literal">false</span>)</span><br><span class="line">		{</span><br><span class="line">			ok=<span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> ok;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	cin&gt;&gt;r&gt;&gt;c&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	{</span><br><span class="line">		cin&gt;&gt;cowx[i]&gt;&gt;cowy[i];<span class="built_in">gets</span>(t);  <span class="comment">//去除其他字符</span></span><br><span class="line">		mp[cowx[i]][cowy[i]]=i;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">checkALL</span>()) cout&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		{</span><br><span class="line">			mp[cowx[i]][cowy[i]]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">checkALL</span>())</span><br><span class="line">			{</span><br><span class="line">				<span class="comment">//要一直检查，这里就没有 break</span></span><br><span class="line">				<span class="comment">//同时不要在前面输出1</span></span><br><span class="line">            </span><br><span class="line">				<span class="keyword">if</span>(!mp[<span class="number">0</span>][<span class="number">0</span>]) mp[<span class="number">0</span>][<span class="number">0</span>]=<span class="literal">true</span>;</span><br><span class="line">				cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">			}</span><br><span class="line">			mp[cowx[i]][cowy[i]]=i;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(!mp[<span class="number">0</span>][<span class="number">0</span>]) cout&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>有啥问题？留言问我。</p>
 <p>jr 的第二篇题解 awa</p>
 <p>cnt = 2</p>
@@ -291,8 +403,8 @@
 好，讲解正式开始。
 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。
 我们要模拟啥呢？
- 1、首先，对于每一个牛，我们都要检查他能不能离开。
-对于每一...`;
+1、首先，对于每一个牛，我们都要检查他能不能离开。
+对于每一个...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -420,7 +532,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%A6%96%E5%85%88%E5%AF%B9%E4%BA%8E%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%E6%88%91%E4%BB%AC%E9%83%BD%E8%A6%81%E6%A3%80%E6%9F%A5%E4%BB%96%E8%83%BD%E4%B8%8D%E8%83%BD%E7%A6%BB%E5%BC%80"><span class="toc-text"> 1、首先，对于每一个牛，我们都要检查他能不能离开。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%B6%E6%AC%A1%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84%E5%9B%BE%E6%88%91%E4%BB%AC%E8%A6%81%E5%B0%9D%E8%AF%95%E5%8E%BB%E6%8E%89%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%E6%9D%A5%E5%B0%9D%E8%AF%95%E8%83%BD%E5%90%A6%E4%BD%BF%E5%9B%BE%E5%8F%98%E5%BE%97%E5%AE%89%E5%85%A8"><span class="toc-text"> 2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E9%A6%96%E5%85%88%EF%BC%8C%E5%AF%B9%E4%BA%8E%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%EF%BC%8C%E6%88%91%E4%BB%AC%E9%83%BD%E8%A6%81%E6%A3%80%E6%9F%A5%E4%BB%96%E8%83%BD%E4%B8%8D%E8%83%BD%E7%A6%BB%E5%BC%80%E3%80%82"><span class="toc-text">1、首先，对于每一个牛，我们都要检查他能不能离开。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%85%B6%E6%AC%A1%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%E5%AE%89%E5%85%A8%E7%9A%84%E5%9B%BE%EF%BC%8C%E6%88%91%E4%BB%AC%E8%A6%81%E5%B0%9D%E8%AF%95%E5%8E%BB%E6%8E%89%E6%AF%8F%E4%B8%80%E4%B8%AA%E7%89%9B%EF%BC%8C%E6%9D%A5%E5%B0%9D%E8%AF%95%E8%83%BD%E5%90%A6%E4%BD%BF%E5%9B%BE%E5%8F%98%E5%BE%97%E5%AE%89%E5%85%A8%E3%80%82"><span class="toc-text">2、其次，如果不是安全的图，我们要尝试去掉每一个牛，来尝试能否使图变得安全。</span></a></li></ol>
     </div>
 </aside>
                 

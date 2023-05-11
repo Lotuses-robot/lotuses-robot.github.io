@@ -71,7 +71,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -186,14 +298,14 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 停课记录：
+                                停课记录：
 2022/10/12~2022/10/16
 做题中心：
 
 Codeforces Constructive problem *1400 - *1800
 Luogu NOIP Problem + CSP Problem
 
-比...
+比赛...
                             
                         </p>
                     </div>
@@ -247,11 +359,12 @@ Luogu NOIP Problem + CSP Problem
                         <p itemProp="description">
                             
                                 话说我的数论和数学已经不够我现在用了，随便做点题都要推式子，不如先学一下有什么要学的———方便做题。
- 数论基础
+数论基础
 首先必然是余数。
 余数在数论中出现的频次（也许）最多了。
- 带余除法
-b=qa+r,d≤r&lt;∣a∣+db = qa...
+带余除法
+ （ 是常数，一般不考虑  正负，以下也不考虑）
+一般...
                             
                         </p>
                     </div>
@@ -365,8 +478,8 @@ b=qa+r,d≤r&lt;∣a∣+db = qa...
                                 我看这题似乎没有将状态转移方程讲清楚的题解啊，所以我来了
 入题。
 看到这题，我立马想到贪心。
-对题意，我的错误的理解为：对于任意一个能量菜单上的能量值都可以在任意时间充电。这样，就可以直接排序选前kkk个最小值进行充电。
-然后，我看到...
+对题意，我的错误的理解为：对于任意一个能量菜单上的能量值都可以在任意时间充电。这样，就可以直接排序选前个最小值进行充电。
+然后，我看到了此题...
                             
                         </p>
                     </div>
@@ -420,8 +533,8 @@ b=qa+r,d≤r&lt;∣a∣+db = qa...
 好，讲解正式开始。
 拿到正确题目后，能想到的就是模拟、暴力。虽然这是一道普及的题目，我们也要将代码优化得更加 短小精干。
 我们要模拟啥呢？
- 1、首先，对于每一个牛，我们都要检查他能不能离开。
-对于每一...
+1、首先，对于每一个牛，我们都要检查他能不能离开。
+对于每一个...
                             
                         </p>
                     </div>
@@ -473,9 +586,9 @@ b=qa+r,d≤r&lt;∣a∣+db = qa...
                             
                                 写这篇题解花了我很多不少时间，希望能过 awa
 题意：
-有 mmm 个数，这 mmm 个数能否由另外 nnn 个数通过加减运算获得。
-对于每一次加减的操作，结果不能小于 000（角度不能小于 000）；
-对于大于等于 36036036...
+有  个数，这  个数能否由另外  个数通过加减运算获得。
+对于每一次加减的操作，结果不能小于 （角度不能小于 ）；
+对于大于等于  的结果，对  取模。（大于  的角会转一圈后...
                             
                         </p>
                     </div>
@@ -527,11 +640,11 @@ b=qa+r,d≤r&lt;∣a∣+db = qa...
                             
                                 虽然我似乎解释明了贪心是可行的，但是我还是有些不爽
 dp 做更直观吧
- Solution
+Solution
 入手这道题，看了看，就直接奔去写贪心。
 至于如何贪心？
-题目大意：对于每一个操作有两种操作选择，使终串全为 A\texttt{A}A 。
-对于这...
+题目大意：对于每一个操作有两种操作选择，使终串全为  。
+对于这道题，贪心只考虑局部最优解...
                             
                         </p>
                     </div>
@@ -582,12 +695,12 @@ dp 做更直观吧
                         <p itemProp="description">
                             
                                 其实这道题渟水的
- Solution
- 题意简化：
+Solution
+题意简化：
 在一堆字符串中间，找到一些两两相对位置正确的字符串的个数。
 其实，我们可以给这些字符串标号。
 就比如说，按样例 1，
-123456783&gt; 1    2     3alpha ...
+123456783&gt; 1    2     3alpha be...
                             
                         </p>
                     </div>
@@ -639,12 +752,12 @@ dp 做更直观吧
                             
                                 非广告：csdn的博客
 东西太多，luogu列表不太友好(没有有标题链接，不便寻找）
- qwq
+qwq
 为SCP初赛选手（我）收集的各种定理qwq
 更新：
 1、为了初赛都能用，不限于定理了
 2、主旨为在短时间内复习各算法，备初赛
-3、请确定你...
+3、请确定你学...
                             
                         </p>
                     </div>
@@ -695,12 +808,12 @@ dp 做更直观吧
                         <p itemProp="description">
                             
                                 这道题还是很水的，做了三天才做出来
- Solution
+Solution
 一看区间操作，就是线段树。
 不过虽然说着简单，但是细节有很多，请注意这里讲到的每一个细节。
- 解题思路
+解题思路
 观察下放操作，先是升序，再是降序。
-若是直接下放，会出现很多复杂的情况，比...
+若是直接下放，会出现很多复杂的情况，比如说...
                             
                         </p>
                     </div>

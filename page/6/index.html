@@ -71,7 +71,119 @@
     
   </style>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
     <body class="custom-background">
@@ -186,9 +298,14 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 Solution
-题目要求对于任意 i,ji,ji,j 都要满足 ai+aj≤2⋅∣ai−aj∣a_i+a_j\le 2\cdot|a_i-a_j|ai​+aj​≤2⋅∣ai​−aj​∣。
-有绝对值，不妨 ai≤aja_i\le a...
+                                Solution
+题目要求对于任意  都要满足 。
+有绝对值，不妨 。所以有
+
+解得
+
+所以只要让数等于前面那个数的三倍即可。初始数为 。（升序，对于任意  都满足，因为是绝对值对称的）
+注意到，样例中有输出 NO 的情况。是什么原因...
                             
                         </p>
                     </div>
@@ -238,10 +355,13 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 Solution
+                                Solution
 发现只要选择任意两个数，都可以通过一次操作将他们两个放在相邻的地方。
-若设处理的两个数为 axa_xax​ 和 aya_yay​，
-如果 x&lt;y−1x&lt;y-1x&lt;y−1，只要翻转 [x,y−1][...
+若设处理的两个数为  和 ，
+如果 ，只要翻转  即可。
+如果 ，只要翻转  即可。
+那么，只要找到序列中最大的两个数，加和输出即可。
+时 ，空 ...
                             
                         </p>
                     </div>
@@ -291,11 +411,12 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 Solution
+                                Solution
 初看这道题，诶，有点难度，果然是 Div.1 + Div.2 的难度啊，AC 自动机？
 啊不不不，完全可以不用 AC 自动机。
 可以发现，只需要查找第一个字母是否出现在后面即可。
-设字符串为 si (1≤i≤∣s∣...
+设字符串为  。
+如果  在后面出现...
                             
                         </p>
                     </div>
@@ -345,12 +466,12 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 Solution
+                                Solution
 暴 力 是不可能不打的。
 这道题目有两种暴力方法。
 一种从合并角度看，将相邻的两个数依次合并，看是否能合并完成。
 但我选择的是更直观的暴力打法。
-将总和依次分解，想到每一次的分解结果要是有对应的数字就消掉，剩下的分...
+将总和依次分解，想到每一次的分解结果要是有对应的数字就消掉，剩下的分解...
                             
                         </p>
                     </div>
@@ -401,8 +522,11 @@
                         <p itemProp="description">
                             
                                 听着《打上花火》，不知不觉推出了式子
-初碰此题，看见 n≤5×106n \le 5 \times 10^6n≤5×106，感觉 nlg⁡nn \lg nnlgn 能过啊
-（5×106×lg⁡5×106≈5×106×22.2534≈1....
+初碰此题，看见 ，感觉  能过啊
+（）
+心想可能得卡个常数了（事实后来我是大常数选手）
+看到题面立马想到插入  的影响是有限的，大概是向左向右  个数。
+整个题目都在求 ，干脆将所有  得到的数单...
                             
                         </p>
                     </div>
@@ -452,10 +576,10 @@
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
                             
-                                 2022/6/16
+                                2022/6/16
 Kth-Number-BFPRT-zhihu
 Kth-Number-BFPRT
- 2021/12/29
+2021/12/29
 OpenSSH-Github
 
                             
