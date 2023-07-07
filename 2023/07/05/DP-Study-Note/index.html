@@ -19,13 +19,13 @@
   <meta name="description" content="动态规划，顾名思义，就是对决策进行动态的规划。 动态规划的两个必要条件： 最优化原理 如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。 如，在 dp 递推层次图的最短路时，最优解路径上每一次转移必然是最优的（在子结构中，就是在当前的状态下的最优解，和自己比不和别人比）。 当遇到题目在最优解中可以不选择最优的子结构时，就不满足最优化原理，也就不是动态规划问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DP 技巧学习笔记">
-<meta property="og:url" content="https://www.lotuses.net/2023/07/04/DP-Study-Note/index.html">
+<meta property="og:url" content="https://www.lotuses.net/2023/07/05/DP-Study-Note/index.html">
 <meta property="og:site_name" content="Lotuses&#39;s Blog">
 <meta property="og:description" content="动态规划，顾名思义，就是对决策进行动态的规划。 动态规划的两个必要条件： 最优化原理 如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。 如，在 dp 递推层次图的最短路时，最优解路径上每一次转移必然是最优的（在子结构中，就是在当前的状态下的最优解，和自己比不和别人比）。 当遇到题目在最优解中可以不选择最优的子结构时，就不满足最优化原理，也就不是动态规划问题">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
-<meta property="article:published_time" content="2023-07-04T02:23:18.000Z">
-<meta property="article:modified_time" content="2023-07-07T01:13:12.568Z">
+<meta property="article:published_time" content="2023-07-05T02:23:18.000Z">
+<meta property="article:modified_time" content="2023-07-07T02:05:16.675Z">
 <meta property="article:author" content="Lotuses">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -278,7 +278,7 @@ mjx-container[display="true"] + br {
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2023/07/04/DP-Study-Note/">
+    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2023/07/05/DP-Study-Note/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
@@ -286,7 +286,7 @@ mjx-container[display="true"] + br {
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2023-07-04T02:23:18.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-07-04</time></li>
+                <li><time datetime="2023-07-05T02:23:18.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-07-05</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">Lotuses</span>
                 </li>
@@ -305,7 +305,7 @@ mjx-container[display="true"] + br {
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1688692392568"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1688695516675"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -421,7 +421,7 @@ mjx-container[display="true"] + br {
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://www.lotuses.net/2023/07/04/DP-Study-Note/",
+                text: "https://www.lotuses.net/2023/07/05/DP-Study-Note/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -433,7 +433,7 @@ mjx-container[display="true"] + br {
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://www.lotuses.net/2023/07/04/DP-Study-Note/";
+            const hostUrl       = "https://www.lotuses.net/2023/07/05/DP-Study-Note/";
             const title         = "「DP 技巧学习笔记」";
             const excerpt       = `动态规划，顾名思义，就是对决策进行动态的规划。
 动态规划的两个必要条件：
@@ -461,7 +461,7 @@ mjx-container[display="true"] + br {
                     <a class="tag-none-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2023-07-07T01:13:12.568Z" itemprop="dateModified">最后编辑：2023-07-07</time>
+                    <time datetime="2023-07-07T02:05:16.675Z" itemprop="dateModified">最后编辑：2023-07-07</time>
                 </div>
             </div>
         </footer>
@@ -484,8 +484,8 @@ mjx-container[display="true"] + br {
         const init = () => {
             console.log('Gitalk loading...');
             const gitalk = new Gitalk(Object.assign({
-                id: '/2023/07/04/DP-Study-Note/',
-                path: '/2023/07/04/DP-Study-Note/'
+                id: '/2023/07/05/DP-Study-Note/',
+                path: '/2023/07/05/DP-Study-Note/'
             }, JSON.parse('{"clientID":"7a41543bab203de00687","clientSecret":"8dcbcc9cbd8d09fedb7023e655899940e13ef17d","repo":"BlogTalk","owner":"Lotuses-robot","admin":["Candinya","Lotuses-robot"],"distractionFreeMode":true,"proxy":"https://vercel.prohibitorum.top/github_access_token"}')));
 
             gitalk.render('gitalk-container');
@@ -588,7 +588,7 @@ mjx-container[display="true"] + br {
         
           
           
-            <a class="list-group-item" href="/2023/07/04/DP-Study-Note/"><i class="fa  fa-book"></i> DP 技巧学习笔记</a>
+            <a class="list-group-item" href="/2023/07/05/DP-Study-Note/"><i class="fa  fa-book"></i> DP 技巧学习笔记</a>
             
           
         
