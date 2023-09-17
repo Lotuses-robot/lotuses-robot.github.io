@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+  
+  <title>2023-2024 OI 日记 | Lotuses&#39;s Blog</title>
+  <meta name="author" content="Lotuses" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="同步于 个人博客 ，欢迎前来访问！ 09-16  csp 第一轮。  早上没定闹钟，起晚了。 路上遇到了中考屏蔽大神，他为我加油了，rp 攒到了）到机房已经接近 650 了。某人已经到了。 隔壁机房陆续走掉了，压力上来了）） 深渊重置，打了深渊，原石 +600。前瞻，+300。每日，+150。总共一千左右，上车抽卡（剧透：歪了刻晴）。 大伙都来了，开摆，总之摆了一上午。 中午去吃饭，非常上火。 睡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023-2024 OI 日记">
+<meta property="og:url" content="https://www.lotuses.net/2023/09/17/2023-2024-OI-Diary/index.html">
+<meta property="og:site_name" content="Lotuses&#39;s Blog">
+<meta property="og:description" content="同步于 个人博客 ，欢迎前来访问！ 09-16  csp 第一轮。  早上没定闹钟，起晚了。 路上遇到了中考屏蔽大神，他为我加油了，rp 攒到了）到机房已经接近 650 了。某人已经到了。 隔壁机房陆续走掉了，压力上来了）） 深渊重置，打了深渊，原石 +600。前瞻，+300。每日，+150。总共一千左右，上车抽卡（剧透：歪了刻晴）。 大伙都来了，开摆，总之摆了一上午。 中午去吃饭，非常上火。 睡">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+<meta property="article:published_time" content="2023-09-17T08:52:04.000Z">
+<meta property="article:modified_time" content="2023-09-17T10:55:38.890Z">
+<meta property="article:author" content="Lotuses">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/usericon/414231.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/05j8cwf8.png');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/no-background.png');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                档案馆
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Lotuses&#39;s Blog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Lotuses&#39;s Blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.lotuses.net/2023/09/17/2023-2024-OI-Diary/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">2023-2024 OI 日记</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2023-09-17T08:52:04.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-09-17</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Lotuses</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        1118
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1694948138890"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#09-16"><span class="toc-number">1.</span> <span class="toc-text">09-16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#09-17"><span class="toc-number">2.</span> <span class="toc-text">09-17</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><p>同步于 <a target="_blank" rel="noopener" href="https://www.lotuses.cn/2023/09/17/2023-2024-OI-Diary">个人博客</a> ，欢迎前来访问！</p>
+<h2 id="09-16">09-16</h2>
+<blockquote>
+<p>csp 第一轮。</p>
+</blockquote>
+<p>早上没定闹钟，起晚了。</p>
+<p>路上遇到了中考屏蔽大神，他为我加油了，rp 攒到了）到机房已经接近 650 了。某人已经到了。</p>
+<p>隔壁机房陆续走掉了，压力上来了））</p>
+<p>深渊重置，打了深渊，原石 +600。前瞻，+300。每日，+150。总共一千左右，上车抽卡（剧透：歪了刻晴）。</p>
+<p>大伙都来了，开摆，总之摆了一上午。</p>
+<p>中午去吃饭，非常上火。</p>
+<p>睡了半个小时觉，准备出发。</p>
+<p>车上歪了刻晴。别人没歪。</p>
+<p>久违的只因中，新科学馆竟然没有饮水机！</p>
+<p>抱着水杯跑到别人高二教学区灌水，赶回来了。</p>
+<p>进考场发现周围一堆熟人。感觉前后都很强，想开摆。发答题卡，检查了三遍准考证号。</p>
+<p>开考。单选做得贼慢。霍夫曼树是什么东西？？16 进制的 “9” 整除问题？？</p>
+<p>阅读理解。位运算是什么东西？一开始看错了，没有使用异或后的东西再次异或。幸好发现，总计 5 分挽回。数论？？？不会，手算，还算错了，但是好在数组理解正确。不理解时间复杂度。分治？？？</p>
+<p>完形填空，还剩下一个小时？还是半个小时。反正做完的时候还有 6-7 分钟。检查检查，把 选择题 14 题从 B -&gt; C -&gt; D。</p>
+<p>好，结束了，开摆。</p>
+<p>对了答案，大约有 80 pts？，车上直接开 phi。然后被难度劝退。</p>
+<p>晚上和机房的几个大神出去吃饭。整了一圈才拿到币！只是可怜了另一个没来的人 wj。玩了一圈下去吃姚。结果大家都没怎么吃/dk 我选错了/dk 非常愧疚/dk</p>
+<p>然后又随便逛了一会儿就打车回家了）挺好的一天！</p>
+<h2 id="09-17">09-17</h2>
+<p>周末。</p>
+<p>早上被某人叫起来，我真厉害。<s>赖床综合症</s></p>
+<p>早上唯一干的事情就是原神。我真摆。</p>
+<p>是周日，提早返校。我还记得周日是领导多倍经验日。今晚不能太摆。竟然吃到了 wls 的瓜！</p>
+<p>所以，18:30 被迫回来打日记）</p>
+<p>突然发现每天写点什么也没啥问题）</p>
+<p>初赛感觉压力还是有的，但是考的还可以，我觉得归功于这几天确实颓废变少了。说明，内卷是必要的/ll/ll/ll/ll</p>
+<p>接下来两个月的停课，还有两个月就要滚回 whk 了，希望在滚回去的时候回看这段内容不会后悔。</p>
+<p>顺便膜隔壁机房的各方大神，stO ljw Orz  stO zzh Orz stO ScatteredHope （帮我记住了 Scattered 的大神）Orz  stO 其他不知道名字的 Orz  stO ryanright Orz  stO tsz Orz  stO WBWYX Orz stO wj Orz stO tigerhan7 Orz  stO lqw Orz  stO 陈总 Orz  stO 其他以及退役的 Orz。</p>
+<p>所念皆星河。</p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.lotuses.net/2023/09/17/2023-2024-OI-Diary/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.lotuses.net/2023/09/17/2023-2024-OI-Diary/";
+            const title         = "「2023-2024 OI 日记」";
+            const excerpt       = `同步于 个人博客 ，欢迎前来访问！
+09-16
+
+csp 第一轮。
+
+早上没定闹钟，起晚了。
+路上遇到了中考屏蔽大神，他为我加油了，rp 攒到了）到机房已经接近 650 了。某人已经到了。
+隔壁机房陆续走掉了，压力上来了））
+深渊重置...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2023-09-17T10:55:38.890Z" itemprop="dateModified">最后编辑：2023-09-17</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 斜率优化 dp 学习笔记" href="/2023/07/14/dp-slope-optimize-study-notes/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2023/09/17/2023-2024-OI-Diary/',
+                path: '/2023/09/17/2023-2024-OI-Diary/'
+            }, JSON.parse('{"clientID":"7a41543bab203de00687","clientSecret":"8dcbcc9cbd8d09fedb7023e655899940e13ef17d","repo":"BlogTalk","owner":"Lotuses-robot","admin":["Candinya","Lotuses-robot"],"distractionFreeMode":true,"proxy":"https://vercel.prohibitorum.top/github_access_token"}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://cdn.luogu.com.cn/upload/usericon/414231.png" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">Deserted World.</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                61
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                0
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                6
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#09-16"><span class="toc-text">09-16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#09-17"><span class="toc-text">09-17</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 0.6em;">二分</a> <a href="/tags/%E5%88%9D%E8%B5%9B/" style="font-size: 0.6em;">初赛</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 0.8em;">总结</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 0.7em;">数学</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.7em;">笔记</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 0.7em;">题解</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2023/09/17/2023-2024-OI-Diary/"><i class="fa  fa-book"></i> 2023-2024 OI 日记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/14/dp-slope-optimize-study-notes/"><i class="fa  fa-book"></i> 斜率优化 dp 学习笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/10/Tree-DP/"><i class="fa  fa-book"></i> 树形 dp 学习笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/05/DP-Study-Note/"><i class="fa  fa-book"></i> DP 技巧学习笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/04/0-1-study-note/"><i class="fa  fa-book"></i> 0-1 思维学习笔记</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        <li><a href="mailto:robot1497833202@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Lotuses-robot"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2023 Lotuses's Blog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Lotuses.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
